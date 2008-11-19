@@ -16,9 +16,9 @@
     assertEquals("this\\#is\\#a\\#test", escapeCssNames("this#is#a#test"));
     assertEquals("this\\>is\\>a\\>test", escapeCssNames("this>is>a>test"));
     assertEquals("this\\,is\\,a\\,test", escapeCssNames("this,is,a,test"));
-    assertEquals("world", escapeCssNames("parselet_blahblah world"));
-    assertEquals("world", escapeCssNames("world parselet_blahblah"));
-    assertEquals("", escapeCssNames("parselet_suggested"));
+    assertEquals("world", escapeCssNames("sg_blahblah world"));
+    assertEquals("world", escapeCssNames("world sg_blahblah"));
+    assertEquals("", escapeCssNames("sg_suggested"));
     assertEquals("hello\\\\", escapeCssNames("hello\\"));
   }
   function testTokenizeCss() {
