@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+    <title>DOM Tests</title>
+<script language="JavaScript" type="text/javascript" src="../vendor/jquery-1.2.6.js"></script>
+<script language="JavaScript" type="text/javascript" src="../vendor/diff/diff_match_patch.js"></script>
+<script language="JavaScript" type="text/javascript" src="../lib/dom.js?13"></script>
+<script language="JavaScript" type="text/javascript" src="../vendor/jsunit/app/jsUnitCore.js"></script>
+
+<script language="JavaScript" type="text/javascript">
+  function testEscapeCssNames() {
+    assertEquals("this\\.is\\.a\\.test", escapeCssNames("this.is.a.test"));
+    assertEquals("this\\#is\\#a\\#test", escapeCssNames("this#is#a#test"));
+    assertEquals("this\\>is\\>a\\>test", escapeCssNames("this>is>a>test"));
+    assertEquals("this\\,is\\,a\\,test", escapeCssNames("this,is,a,test"));
+    assertEquals("world", escapeCssNames("parselet_blahblah world"));
+    assertEquals("world", escapeCssNames("world parselet_blahblah"));
+    assertEquals("", escapeCssNames("parselet_suggested"));
+    assertEquals("hello\\\\", escapeCssNames("hello\\"));
+  }
+  function testTokenizeCss() {
+    assertEquals(["div", "#id"].toString(), tokenizeCss("div#id").toString());
+    assertNotEquals(["div#", "id"].toString(), tokenizeCss("div#id").toString());
+    assertNotEquals(["div", "id"].toString(), tokenizeCss("div#id").toString());
+    assertNotEquals(["div", " ", ",", " ", "id"].toString(), tokenizeCss("div,html").toString());
+    assertEquals(["div", " ", "#id"].toString(), tokenizeCss("div #id").toString());
+    assertEquals(["div", " ", "#id"].toString(), tokenizeCss("div      \t#id").toString());
+    assertEquals(["div", " ", "div", "#id", ".class1", ".class2", ":nth-child(2)", " ", "span"].toString(), 
+                  tokenizeCss("div div#id.class1.class2:nth-child(2) span").toString());
+    assertEquals(["div", ">id"].toString(), tokenizeCss("div>id").toString());
+    assertEquals(["div", ".class", " ", "div", " ", "a", "#blah\\.hi"].toString(), tokenizeCss("div.class div a#blah\\.hi").toString());
+  }
+  function testEncodeCssForDiff() {
+    var existing_tokens = {};
+    var strings = ["body div#main #something", "body div#main #something_else"];
+    var new_strings = encodeCssForDiff(strings, existing_tokens);
+    assertEquals(new_strings[0].substring(0, 1), new_strings[1].substring(0, 1));
+    assertEquals(invertObject(existing_tokens)[new_strings[0].substring(0, 1)], 'body');
+    assertEquals(new_strings[0].substring(1, 2), new_strings[1].substring(1, 2));
+    assertEquals(invertObject(existing_tokens)[new_strings[0].substring(1, 2)], ' ');
+    assertEquals(new_strings[0].substring(2, 3), new_strings[1].substring(2, 3));
+    assertEquals(new_strings[0].substring(3, 4), new_strings[1].substring(3, 4));
+    assertEquals(invertObject(existing_tokens)[new_strings[0].substring(3, 4)], '#main');
+    assertNotEquals(new_strings[0].substring(5, 6), new_strings[1].substring(5, 6));
+  }
+  function testDecodeCss() {
+    var existing_tokens = {};
+    var strings = ["body div#main #something", "body div#main #something_else"];
+    var new_strings = encodeCssForDiff(strings, existing_tokens);
+    assertEquals(decodeCss(new_strings[0], existing_tokens), "body div#main #something");
+  }
+
+  function testCommonCss() {
+    assertEquals(commonCss([]), '');
+    assertEquals(commonCss(['']), '');
+    assertEquals(commonCss(["body div#main #something", "body div#main #something_else"]), 'body div#main');
+    assertEquals(commonCss(["body blah div#main", "body div#main"]), 'body div#main');
+    assertEquals(commonCss(["body blah a div#main", "body div#main"]), 'body div#main');
+  }
+  
+  function testChildElemNumber() {
+    var parent = $('<div>').append($('<b>hello</b>')).append($('<b>hi</b>')).append(document.createTextNode('hi')).append($('<b>there</b>')).get(0);
+    assertEquals(0, childElemNumber(parent.childNodes[0]));
+    assertEquals(1, childElemNumber(parent.childNodes[1]));
+    assertEquals(2, childElemNumber(parent.childNodes[2]));
+
+    assertEquals(0, childElemNumber($(':nth-child(1)', parent).get(0)));
+    assertEquals(1, childElemNumber($(':nth-child(2)', parent).get(0)));
+    assertEquals(2, childElemNumber($(':nth-child(3)', parent).get(0)));
+  }
+  
+  function testPathOf() {
+    assertTrue(pathOf($('#leaf1').get(0)).indexOf("#leaf1") > -1);
+    assertTrue(pathOf($('#leaf1').get(0)).indexOf("span.sibling.something.else:nth-child(2) i#leaf1") > -1);
+  }
+  
+  function testReduceCss() {
+    assertEquals('.sibling', predictCss([$('#parent1 span.sibling:nth-child(1)').get(0), $('#parent1 span.sibling:nth-child(2)').get(0)], 
+                                        []));
+
+    assertEquals('#leaf1', predictCss([$('#parent1 i').get(0)], [$('#parent1 b').get(0)]));
+  }
+  
+  function testWouldLeaveFreeFloatingNthChild() {
+    assertTrue(wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)", " ", "div"], 0));
+    assertFalse(wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)", " ", "div"], 1));
+    assertFalse(wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)", " ", "div"], 2));
+    assertFalse(wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)", " ", "div"], 3));
+
+    assertFalse(wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)", " ", "div"], 0));
+    assertFalse(wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)", " ", "div"], 1));
+    assertFalse(wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)", " ", "div"], 2));
+    assertTrue(wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)", " ", "div"], 3));
+    assertFalse(wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)", " ", "div"], 4));
+    assertFalse(wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)", " ", "div"], 5));
+
+    assertTrue(wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)"], 3));
+    assertFalse(wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)"], 4));
+
+    assertTrue(wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)"], 0));
+    assertFalse(wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)"], 1));
+
+    assertFalse(wouldLeaveFreeFloatingNthChild(["a"], 0));
+    assertFalse(wouldLeaveFreeFloatingNthChild([":nth-child(0)"], 0));
+  }
+  
+  function testGetArrayTag() {
+    var someObject = {};
+    var someThingElse = new String();
+    assertTrue(tagObject(someObject) == tagObject(someObject));
+    assertTrue(tagObject(someThingElse) == tagObject(someThingElse));
+    assertTrue(tagObject(someThingElse) != tagObject(someObject));
+    assertTrue(getArrayTag([someObject, someThingElse]) == getArrayTag([someObject, someThingElse]));
+    assertTrue(getArrayTag([someThingElse, someObject]) == getArrayTag([someObject, someThingElse]));
+    assertTrue(getArrayTag([someObject]) != getArrayTag([someObject, someThingElse]));
+  }
+  
+</script>
+  </head>
+
+  <body>
+    <h1>DOM Tests</h1>
+    <p>This page contains tests for the DOM fu script using jsUnit. To see them, take a look at the source.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+    <div id='parent1'><span class='sibling'><b>&nbsp;</b></span><span class='sibling something else'><i id='leaf1'>&nbsp;</i></span>
+      <span class='sibling' id='leaf2'>
+        <b>&nbsp;</b>
+      </span>
+      <span class='sibling'>&nbsp;</span>
+    </div>
+
+  </body>
+</html>
+
