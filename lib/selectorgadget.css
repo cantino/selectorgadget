@@ -32,8 +32,8 @@ img.sg_selected{
 #_sg_div{
   position:fixed !important;
   z-index:9999999 !important;
-  bottom:5px !important;
   display:block !important;
+  right:5px !important;
   margin:5px !important;
   padding:5px !important;
   font-size:14px !important;
@@ -44,11 +44,11 @@ img.sg_selected{
   vertical-align:baseline !important;
   background:white !important;
 }
-#_sg_div.sg_right{
-  right:5px !important;
+#_sg_div.sg_top{
+  top:5px !important;
 }
-#_sg_div.sg_left{
-  left:5px !important;
+#_sg_div.sg_bottom{
+  bottom:5px !important;
 }
 #_sg_div input{
   margin-right:10px;
