@@ -9,7 +9,21 @@
 .sg_border{
   position:absolute;
   z-index:999999;
+  background:white;
   background-color:orange;
+  margin:0px;
+  padding:0px;
+  display:block;
+  float:none;
+  border:0;
+  font-style:none;
+  outline:0;
+  vertical-align:baseline;
+  text-align:left;
+}
+.sg_bottom_border{
+  font-size:10px;
+  padding:2px 0px 2px 5px;
 }
 .sg_border_red{
   background-color:#F00 !important;
@@ -43,6 +57,7 @@ img.sg_selected{
   outline:0 !important;
   vertical-align:baseline !important;
   background:white !important;
+  text-align:left !important;
 }
 #_sg_div.sg_top{
   top:5px !important;
@@ -52,6 +67,7 @@ img.sg_selected{
 }
 #_sg_div input{
   margin-right:10px;
+  font-size:15px;
 }
 #_sg_path_field{
   width:400px;
