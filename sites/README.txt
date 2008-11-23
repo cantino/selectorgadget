@@ -1,0 +1,1 @@
+This directory contains example HTML sites to test the local bookmarklet.  Use the bookmarklet from ../doc/bookmarklet_local.html on any of the pages in this directory.
