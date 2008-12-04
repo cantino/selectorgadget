@@ -1,8 +1,11 @@
-Release .31 11/23/08
+Release 0.3.2 12/04/08
+  - better tag naming
+  - removal of interface clutter
+Release 0.3.1 11/23/08
   - jQuery non-conflict mode
-Release .3  11/22/08
+Release 0.3.0  11/22/08
   - Enable / disable
   - Show highlighted tag name
-Release .22  11/19/08
+Release 0.2.2  11/19/08
   - Internal refractor, won't clobber namespaces now
 
