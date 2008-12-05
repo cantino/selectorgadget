@@ -59,6 +59,9 @@ img.sg_selected{
   background:white !important;
   text-align:left !important;
 }
+#_sg_div select {
+	width:400px;
+}
 #_sg_div.sg_top{
   top:5px !important;
 }
