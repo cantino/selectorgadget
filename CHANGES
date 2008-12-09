@@ -1,3 +1,5 @@
+Release 0.3.3
+  - block highlighting of the ancestors of selected elements
 Release 0.3.2 12/04/08
   - better tag naming
   - removal of interface clutter
