@@ -1,3 +1,5 @@
+Release 0.3.4
+  - bug fixes
 Release 0.3.3
   - block highlighting of the ancestors of selected elements
   - better blocking of click events
