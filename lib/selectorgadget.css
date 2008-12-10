@@ -2,6 +2,38 @@
   background-color:#0F0 !important;
   background-image:none !important;
 }
+.sg_implied{
+background-image:none !important;
+}
+.sg_c0{
+background-color:#cff !important;
+}
+.sg_c1{
+background-color:#E6CCFF !important;
+}
+.sg_c2{
+background-color:#FFCCFF !important;
+}
+
+.sg_c3{
+background-color:#FFCCE6 !important;
+}
+
+.sg_c4{
+background-color:#CCE6FF !important;
+}
+
+.sg_c5{
+background-color:#FFCCCC !important;
+}
+
+.sg_c6{
+background-color:#CCFFE6 !important;
+}
+
+.sg_c7{
+background-color:#E6FFCC !important;
+}
 .sg_suggested{
   background-color:#FF5 !important;
   background-image:none !important;
