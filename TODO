@@ -1,3 +1,5 @@
+- ">" is a necessary operator
+- p, not the a nested within
 TODO:
  - Look into using :nth-of-type(n)
  - Fix bug with Reddit.
