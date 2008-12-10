@@ -1,7 +1,3 @@
-.sg_selected{
-  background-color:#0F0 !important;
-  background-image:none !important;
-}
 .sg_implied{
 background-image:none !important;
 }
@@ -36,6 +32,10 @@ background-color:#E6FFCC !important;
 }
 .sg_suggested{
   background-color:#FF5 !important;
+  background-image:none !important;
+}
+.sg_selected{
+  background-color:#0F0 !important;
   background-image:none !important;
 }
 .sg_border{
