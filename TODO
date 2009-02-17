@@ -1,4 +1,3 @@
 TODO:
  - Look into using :nth-of-type(n)
  - Fix bug with Reddit.
- - Revamp the CSS selector generation process to skip jQuery on the DOM and interpret the CSS directly.
