@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+    <title>DOM Tests</title>
+<script language="JavaScript" type="text/javascript" src="../vendor/jquery-1.2.6.js"></script>
+<script language="JavaScript" type="text/javascript" src="../vendor/diff/diff_match_patch.js"></script>
+<script language="JavaScript" type="text/javascript" src="../lib/dom.js?r=467f72d19"></script>
+<script language="JavaScript" type="text/javascript" src="../vendor/jsunit/app/jsUnitCore.js"></script>
+
+<script language="JavaScript" type="text/javascript">
+  function testEscapeCssNames() {
+    var dom = new DomPredictionHelper();
+    assertEquals("this\\.is\\.a\\.test", dom.escapeCssNames("this.is.a.test"));
+    assertEquals("this\\#is\\#a\\#test", dom.escapeCssNames("this#is#a#test"));
+    assertEquals("this\\>is\\>a\\>test", dom.escapeCssNames("this>is>a>test"));
+    assertEquals("this\\,is\\,a\\,test", dom.escapeCssNames("this,is,a,test"));
+    assertEquals("world", dom.escapeCssNames("sg_blahblah world"));
+    assertEquals("world", dom.escapeCssNames("world sg_blahblah"));
+    assertEquals("", dom.escapeCssNames("sg_suggested"));
+    assertEquals("hello\\\\", dom.escapeCssNames("hello\\"));
+  }
+
+  function testDecodeCss() {
+    var dom = new DomPredictionHelper();
+    assertEquals(["div", "#id"].toString(), dom.decodeCss("div#id").toString());
+    assertNotEquals(["div#", "id"].toString(), dom.decodeCss("div#id").toString());
+    assertNotEquals(["div", "id"].toString(), dom.decodeCss("div#id").toString());
+    assertNotEquals(["div", " ", ",", " ", "id"].toString(), dom.decodeCss("div,html").toString());
+    assertEquals(["div", " ", "#id"].toString(), dom.decodeCss("div #id").toString());
+    assertEquals(["div", " ", "#id"].toString(), dom.decodeCss("div      \t#id").toString());
+    assertEquals(["div", " ", "div", "#id", ".class1", ".class2", ":nth-child(2)", " ", "span"].toString(), 
+                  dom.decodeCss("div div#id.class1.class2:nth-child(2) span").toString());
+    assertEquals(["div", ">id"].toString(), dom.decodeCss("div>id").toString());
+    assertEquals(["div", ".class", " ", "div", " ", "a", "#blah\\.hi"].toString(), dom.decodeCss("div.class div a#blah\\.hi").toString());
+  }
+
+  function testEncodeCssForDiff() {
+    var dom = new DomPredictionHelper();
+    var existing_tokens = {};
+    var strings = ["body div#main #something", "body div#main #something_else"];
+    var new_strings = dom.encodeCssForDiff(strings, existing_tokens);
+    assertEquals(new_strings[0].substring(0, 1), new_strings[1].substring(0, 1));
+    assertEquals(dom.invertObject(existing_tokens)[new_strings[0].substring(0, 1)], 'body');
+    assertEquals(new_strings[0].substring(1, 2), new_strings[1].substring(1, 2));
+    assertEquals(dom.invertObject(existing_tokens)[new_strings[0].substring(1, 2)], ' ');
+    assertEquals(new_strings[0].substring(2, 3), new_strings[1].substring(2, 3));
+    assertEquals(new_strings[0].substring(3, 4), new_strings[1].substring(3, 4));
+    assertEquals(dom.invertObject(existing_tokens)[new_strings[0].substring(3, 4)], '#main');
+    assertNotEquals(new_strings[0].substring(5, 6), new_strings[1].substring(5, 6));
+  }
+
+  function testDecodeCss() {
+    var dom = new DomPredictionHelper();
+    var existing_tokens = {};
+    var strings = ["body div#main #something", "body div#main #something_else"];
+    var new_strings = dom.encodeCssForDiff(strings, existing_tokens);
+    assertEquals(dom.decodeCss(new_strings[0], existing_tokens), "body div#main #something");
+  }
+
+  function testCommonCss() {
+    var dom = new DomPredictionHelper();
+    assertEquals(dom.commonCss([]), '');
+    assertEquals(dom.commonCss(['']), '');
+    assertEquals(dom.commonCss(["body div#main #something", "body div#main #something_else"]), 'body div#main');
+    assertEquals(dom.commonCss(["body blah div#main", "body div#main"]), 'body div#main');
+    assertEquals(dom.commonCss(["body blah a div#main", "body div#main"]), 'body div#main');
+  }
+  
+  function testChildElemNumber() {
+    var dom = new DomPredictionHelper();
+    var parent = $('<div>').append($('<b>hello</b>')).append($('<b>hi</b>')).append(document.createTextNode('hi')).append($('<b>there</b>')).get(0);
+    assertEquals(0, dom.childElemNumber(parent.childNodes[0]));
+    assertEquals(1, dom.childElemNumber(parent.childNodes[1]));
+    assertEquals(2, dom.childElemNumber(parent.childNodes[2]));
+    
+    assertEquals(0, dom.childElemNumber($(':nth-child(1)', parent).get(0)));
+    assertEquals(1, dom.childElemNumber($(':nth-child(2)', parent).get(0)));
+    assertEquals(2, dom.childElemNumber($(':nth-child(3)', parent).get(0)));
+  }
+  
+  function testPathOf() {
+    var dom = new DomPredictionHelper();
+    assertTrue(dom.pathOf($('#leaf1').get(0)).indexOf("#leaf1") > -1);
+    assertTrue(dom.pathOf($('#leaf1').get(0)).indexOf("span.sibling.something.else:nth-child(2) i#leaf1") > -1);
+  }
+  
+  function testSimplifyCss() {
+    var dom = new DomPredictionHelper();
+    assertEquals("body", dom.simplifyCss("body", ["body"], []));
+    assertEquals("", dom.simplifyCss("body", ["a"], []));
+    assertEquals("", dom.simplifyCss("body", [], []));
+    assertEquals("", dom.simplifyCss("tr td", ["a b c tr td e", "tr td"], []));
+    assertEquals("td", dom.simplifyCss("tr td", ["a b c tr td", "tr td"], []));
+    assertEquals("tr td", dom.simplifyCss("tr td", ["a b c tr td", "tr td"], ["td"]));
+  }
+  
+  function testPredictCss() {
+    var dom = new DomPredictionHelper();
+    assertEquals('.sibling', dom.predictCss([$('#parent1 span.sibling:nth-child(1)').get(0), $('#parent1 span.sibling:nth-child(2)').get(0)], 
+                                        []));
+    
+    assertEquals('#leaf1', dom.predictCss([$('#parent1 i').get(0)], [$('#parent1 b').get(0)]));
+  }
+  
+  function testSelectorBlockMatchesSelectorBlock() {
+    var dom = new DomPredictionHelper();
+    assertEquals(true, dom.selectorBlockMatchesSelectorBlock(['b'], ['b']));
+    assertEquals(true, dom.selectorBlockMatchesSelectorBlock(['b'], ['b', ':nth-child(1)']));
+    assertEquals(true, dom.selectorBlockMatchesSelectorBlock(['b', ':nth-child(1)'], ['b', ':nth-child(1)']));
+    assertEquals(true, dom.selectorBlockMatchesSelectorBlock([':nth-child(1)'], ['b', ':nth-child(1)']));
+    assertEquals(false, dom.selectorBlockMatchesSelectorBlock(['i', ':nth-child(1)'], ['b', ':nth-child(1)']));
+    assertEquals(false, dom.selectorBlockMatchesSelectorBlock(['i', '.class'], ['i']));
+  }
+  
+  function testSelectorGets() {
+    var dom = new DomPredictionHelper();
+    assertEquals(true, dom.selectorGets('all', ['table td div#a', 'something_else td div#a'], 'div#a'));
+    assertEquals(true, dom.selectorGets('all', ['table td div#a.hi:nth-child(2)', 'something_else td div#a.hi '], 'div#a'));
+    assertEquals(false, dom.selectorGets('all', ['table td div#a.hi:nth-child(2) b', 'something_else td div#a'], 'div#a'));
+    assertEquals(false, dom.selectorGets('all', ['table td div#a.hi:nth-child(2) .b', 'something_else td div#a'], 'div#a'));
+    assertEquals(false, dom.selectorGets('all', ['table td div#a.hi:nth-child(2)', 'something_else td div#a :nth-child(1)'], 'div#a'));
+    assertEquals(false, dom.selectorGets('all', ['table td div', 'something_else td div#a'], 'div#a'));
+    assertEquals(false, dom.selectorGets('all', ['table td div#a div', 'something_else td div#a'], 'div#a'));
+    assertEquals(true, dom.selectorGets('all', ['table td div div#a', 'something_else td div#a'], 'div#a'));
+    assertEquals(true, dom.selectorGets('all', ['table td div div div', 'something_else td div#a'], 'div'));
+    assertEquals(true, dom.selectorGets('all', ["a b c tr td", "tr td"], "tr td"));
+    assertEquals(true, dom.selectorGets('all', ["a b c tr td td", "tr td"], "tr td"));
+    assertEquals(false, dom.selectorGets('all', ["a b c tr td td", "tr td a"], "tr td"));
+    assertEquals(true, dom.selectorGets('all', ["a b c tr td td .hi", "tr td a.hi"], "tr td .hi"));
+    assertEquals(false, dom.selectorGets('all', ["a b c tr td td .hi", "tr td a.hi .b"], "tr td .hi"));
+
+    assertEquals(true, dom.selectorGets('all', ["a b c tr td td .hi", "tr td a.hi .b a"], "tr td .hi , a"));
+
+    assertEquals(false, dom.selectorGets('all', ["a b c tr td td .hi :c", "tr td a.hi:c"], "tr td .hi :c"));
+    assertEquals(true, dom.selectorGets('all', ["a b c tr td td .hi :c", "tr td a.hi:c :c"], "tr td .hi :c"));
+    assertEquals(false, dom.selectorGets('all', ["a b c tr td td .hi :c", "td a.hi:c :c"], "tr td .hi :c"));
+    
+    assertEquals(false, dom.selectorGets('all', ['table td div', 'something_else td div#a'], '#a'));
+    assertEquals(false, dom.selectorGets('all', ['table td#a div', 'something_else td div#a'], '#a'));
+    assertEquals(true, dom.selectorGets('all', ['table td div#a', 'something_else td div#a'], '#a'));
+    
+    assertEquals(false, dom.selectorGets('all', ['table td div.a:nth-child(1)', 'something_else td div.a:nth-child(2)'], '.b'));
+    assertEquals(true, dom.selectorGets('all', ['table td div.a:nth-child(1)', 'something_else td div.a:nth-child(2)'], '.a'));
+    
+    assertEquals(false, dom.selectorGets('all', [], '#b'));
+    assertEquals(true, dom.selectorGets('none', [], '#b'));
+    
+    assertEquals(true, dom.selectorGets('none', ['table td div#a', 'something_else td div#a'], '#b'));
+    assertEquals(true, dom.selectorGets('none', ['table td div#a', 'something_else td div#a'], 'table'));
+    assertEquals(true, dom.selectorGets('none', ['table td div#a', 'something_else td table table div#a'], 'table'));
+    assertEquals(false, dom.selectorGets('none', ['table td div#a table', 'something_else td div#a'], 'table'));
+  }
+  
+  function test_selectorGets() {
+    var dom = new DomPredictionHelper();
+    assertEquals(true, dom._selectorGets([['something_else'], ['td'], ['div', '#a']], [['div', '#a']]));
+    assertEquals(false, dom._selectorGets([['something_else'], ['td'], ['div', '#a']], [['div', '#a', ':blah']]));
+    assertEquals(true, dom._selectorGets([['something_else'], ['a'], ['div', '#a']], [['a'], ['div', '#a']]));
+  }
+  
+  function testFragmentSelector() {
+    var dom = new DomPredictionHelper();
+    assertEquals("body", dom.fragmentSelector("body div")[0][0][0]);
+    assertEquals("div", dom.fragmentSelector("body div")[0][1][0]);
+    assertEquals("div", dom.fragmentSelector("body div:nth-child(1)")[0][1][0]);
+    assertEquals(":nth-child(1)", dom.fragmentSelector("body div:nth-child(1)")[0][1][1]);
+    assertEquals("div", dom.fragmentSelector("hello,body div")[1][1][0]);
+    assertEquals("div", dom.fragmentSelector("  hello , body div       ")[1][1][0]);
+
+    assertEquals("c", dom.fragmentSelector("a b c.d:e :f")[0][2][0]);
+    assertEquals(".d", dom.fragmentSelector("a b c.d:e :f")[0][2][1]);
+    assertEquals(":e", dom.fragmentSelector("a b c.d:e :f")[0][2][2]);
+    assertEquals(":f", dom.fragmentSelector("a b c.d:e :f")[0][3][0]);
+  }
+  
+  function testWouldLeaveFreeFloatingNthChild() {
+    var dom = new DomPredictionHelper();
+    assertTrue(dom.wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)", " ", "div"], 0));
+    assertFalse(dom.wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)", " ", "div"], 1));
+    assertFalse(dom.wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)", " ", "div"], 2));
+    assertFalse(dom.wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)", " ", "div"], 3));
+    
+    assertFalse(dom.wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)", " ", "div"], 0));
+    assertFalse(dom.wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)", " ", "div"], 1));
+    assertFalse(dom.wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)", " ", "div"], 2));
+    assertTrue(dom.wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)", " ", "div"], 3));
+    assertFalse(dom.wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)", " ", "div"], 4));
+    assertFalse(dom.wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)", " ", "div"], 5));
+    
+    assertTrue(dom.wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)"], 3));
+    assertFalse(dom.wouldLeaveFreeFloatingNthChild(["div", ".hi", " ", "a", ":nth-child(0)"], 4));
+    
+    assertTrue(dom.wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)"], 0));
+    assertFalse(dom.wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)"], 1));
+    
+    assertFalse(dom.wouldLeaveFreeFloatingNthChild(["a"], 0));
+    assertFalse(dom.wouldLeaveFreeFloatingNthChild([":nth-child(0)"], 0));
+  }
+  
+  function testCssToXPath() {
+    var dom = new DomPredictionHelper();
+    
+    var expressions = ['a', '#leaf1', 'body #leaf1', 'span.sibling.something.else', 
+                       'span.sibling', '.else.something', ':nth-child(2) i#leaf1', 'span.something.else:nth-child(2) i#leaf1'];
+    
+    for (var i = 0; i < expressions.length; i++) {
+      var css = expressions[i];
+      var xpath = dom.cssToXPath(css);
+      console.log("css: " + css);
+      console.log("xpath: " + xpath);
+      if (!cssAndXPathMatch(css, dom.cssToXPath(css))) {
+        console.log(css + ' LIKE ' + xpath);
+      }
+    }
+  }
+  
+  function cssAndXPathMatch(css, xpath) {
+    var css_matches = jQuery(css);
+    var elements = [];
+    for (var i = 0; i < css_matches.length; i++) {
+      elements.push(css_matches.get(i));
+    }
+    
+    var elems = document.evaluate(xpath, document, null, XPathResult.ANY_TYPE, null);
+    var elem = elems.iterateNext();
+    var pos = -1;
+    while (elem){
+      pos = jQuery.inArray(elem, elements);
+      if (pos == -1) {
+        return false;
+      } else {
+        elements.splice(pos, 1);
+      }
+      var elem = elems.iterateNext();
+    }
+    if (elements.length == 0) return true;
+    return false;
+  }
+  
+</script>
+  </head>
+
+  <body>
+    <h1>DOM Tests</h1>
+    <p>This page contains tests for the DOM fu script using jsUnit. To see them, take a look at the source.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+    <div id='parent1'><span class='sibling'><b>&nbsp;</b></span><span class='sibling something else'><i id='leaf1'>&nbsp;</i></span>
+      <span class='sibling' id='leaf2'>
+        <b>&nbsp;</b>
+      </span>
+      <span class='sibling'>&nbsp;</span>
+    </div>
+
+  </body>
+</html>
+
