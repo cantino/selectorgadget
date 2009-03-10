@@ -199,6 +199,45 @@
     assertFalse(dom.wouldLeaveFreeFloatingNthChild(["a"], 0));
     assertFalse(dom.wouldLeaveFreeFloatingNthChild([":nth-child(0)"], 0));
   }
+  
+  function testCssToXPath() {
+    var dom = new DomPredictionHelper();
+    
+    var expressions = ['a', '#leaf1', 'body #leaf1', 'span.sibling.something.else', 'a , b , #leaf1', 
+                       'span.sibling', '.else.something', ':nth-child(2) i#leaf1', 'span.something.else:nth-child(2) i#leaf1'];
+    
+    for (var i = 0; i < expressions.length; i++) {
+      var css = expressions[i];
+      var xpath = dom.cssToXPath(css);
+      if (!cssAndXPathMatch(css, dom.cssToXPath(css))) {
+        console.log(css + ' LIKE ' + xpath);
+      }
+    }
+  }
+  
+  function cssAndXPathMatch(css, xpath) {
+    var css_matches = jQuery(css);
+    var elements = [];
+    for (var i = 0; i < css_matches.length; i++) {
+      elements.push(css_matches.get(i));
+    }
+    
+    var elems = document.evaluate(xpath, document, null, XPathResult.ANY_TYPE, null);
+    var elem = elems.iterateNext();
+    var pos = -1;
+    while (elem){
+      pos = jQuery.inArray(elem, elements);
+      if (pos == -1) {
+        return false;
+      } else {
+        elements.splice(pos, 1);
+      }
+      var elem = elems.iterateNext();
+    }
+    if (elements.length == 0) return true;
+    return false;
+  }
+  
 </script>
   </head>
 

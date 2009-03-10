@@ -205,3 +205,12 @@ img.sg_selected{
 #_sg_path_field{
   width:400px !important;
 }
+#_sg_div .sg_new_line {
+  clear: both;
+}
+#_sg_div .sg_option {
+  float: left;
+}
+#_sg_div .sg_selected_option {
+  text-decoration: underline;
+}
