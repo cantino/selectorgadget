@@ -1,8 +1,10 @@
+Release 0.4.1
+  - All copyright holders need to agree to license, temporarily in license limbo.
 Release 0.4.0
   - By default, once you have something selected, rejection is preferred - change with the shift key.
   - Bug fix with item rejection
 Release 0.3.9
-  - Released under the MIT License
+  - Released under the MIT License (see 0.4.1, this was premature as all copyright holders did not agree)
 Release 0.3.8
   - Help change
 Release 0.3.7
