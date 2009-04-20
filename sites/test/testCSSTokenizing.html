@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>CSS Path Tokenizing Test</title>
+	<script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+	<script src="../../lib/dom.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+	  $(document).ready(function () {
+        $("#start").click(function(){
+          runTests();
+        });
+    });
+    
+    function runTests(){
+      var domPred = new DomPredictionHelper();
+      var out = $('#results').html('');
+      
+      $('#paths .test').each(function(i,e){
+        var text = $(e).text();
+        var start = new Date();
+        var n = 100; while(n-- > 0){
+          var tokens = domPred.tokenizeCss(text);
+        }
+        var finish = new Date();
+        var time = finish.getTime() - start.getTime();
+        
+        out.append($('<dt>').text(text));
+        out.append($('<dd>').text(time+'ms'));
+      });
+      
+      return false;
+    }
+	</script>
+</head>
+
+<body>
+  <p>
+    Below are a variety of css paths, and the time it takes to parse each of them.
+    <a href='#' id='start'>Run Tests</a>
+  </p>
+  <h1>Tests</h1>
+  <div id='paths'>
+    <div class='test'> a                                                                        </div>
+    <div class='test'> .videos a                                                                </div>
+    <div class='test'> .videos a, img, li:nth-child(10) a                                       </div>
+    <div class='test'> img , .offsite a, li:nth-child(10) a, #cnnT2Col li:nth-child(7) a        </div>
+  </div>
+  
+  <h2>Results</h2>
+  <p>Milliseconds for 100 calls</p>
+  <dl id='results'></dl>
+</body>
+</html>
