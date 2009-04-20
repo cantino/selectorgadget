@@ -1,0 +1,1423 @@
+<html><head><!--<br>create index icor on c123 (course_num)-->
+<!--<br>create index igro on c123 (group_num)-->
+<!--<br> a_record.str=select [account].[buildings].[b_code],					       [account].[buildings].[b_name],						   [account].[buildings].[b_short_name],						   [account].[buildings].[eng_name],						   [x].[*],						   [account].[url_list].[*] 			               from [account].course x,[c123] y,outer [account].[url_list],outer [account].[buildings] 			       where x.[dep_num]=y.[dep_num] and y.[dep_num]=[account].[url_list].[dep_num] and 			       x.[course_num]=y.[course_num] and x.[course_num]=[account].[url_list].[course_num] and 				   x.[group_num] matches y.[group_num] and x.[group_num]=[account].[url_list].[group_num] and 				   x.[semester] matches '2008*' and 				   x.[building] = [account].[buildings].[b_code] 				   order by x.[dep_num],x.[course_num],x.[group_num],x.[last_name],x.[first_name],x.[semester],x.[day_of_week]-->
+<!--<br>Not a_record.IsEof-->
+
+
+<title>Results of Search</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-8">
+<link rel="STYLESHEET" type="text/css" href="sgdoesntwork_files/yedion.css">
+<script language="JavaScript">
+<!--
+function Notice(str1,str2,str3){
+	   alert(str1 + "\n" + str2 + "\n" + str3);
+return false;
+}
+//-->
+</script>
+<style type="text/css" charset="utf-8">/* See license.txt for terms of usage */
+
+.firebugHighlight {
+    z-index: 2147483647;
+    position: absolute;
+    background-color: #3875d7;
+}
+
+.firebugLayoutBoxParent {
+    z-index: 2147483647;
+    position: absolute;
+    background-color: transparent;
+    border-right: 1px dashed #BBBBBB;
+    border-bottom: 1px dashed #BBBBBB;
+}
+
+.firebugRulerH {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    background: url(chrome://firebug/skin/rulerH.png) repeat-x;
+    border-top: 1px solid #BBBBBB;
+    border-right: 1px dashed #BBBBBB;
+    border-bottom: 1px solid #000000;
+}
+
+.firebugRulerV {
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 14px;
+    height: 100%;
+    background: url(chrome://firebug/skin/rulerV.png) repeat-y;
+    border-left: 1px solid #BBBBBB;
+    border-right: 1px solid #000000;
+    border-bottom: 1px dashed #BBBBBB;
+}
+
+.overflowRulerX > .firebugRulerV {
+    left: 0;
+}
+
+.overflowRulerY > .firebugRulerH {
+    top: 0;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.firebugLayoutBoxOffset {
+    z-index: 2147483647;
+    position: absolute;
+    opacity: 0.8;
+}
+
+.firebugLayoutBoxMargin {
+    background-color: #EDFF64;
+}
+
+.firebugLayoutBoxBorder {
+    background-color: #666666;
+}
+
+.firebugLayoutBoxPadding {
+    background-color: SlateBlue;
+}
+
+.firebugLayoutBoxContent {
+    background-color: SkyBlue;
+}
+
+/*.firebugHighlightGroup .firebugLayoutBox {
+    background-color: transparent;
+}
+
+.firebugHighlightBox {
+    background-color: Blue !important;
+}*/
+
+.firebugLayoutLine {
+    z-index: 2147483647;
+    background-color: #000000;
+    opacity: 0.4;
+}
+
+.firebugLayoutLineLeft,
+.firebugLayoutLineRight {
+    position: fixed;
+    width: 1px;
+    height: 100%;
+}
+
+.firebugLayoutLineTop,
+.firebugLayoutLineBottom {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+}
+
+.firebugLayoutLineTop {
+    margin-top: -1px;
+    border-top: 1px solid #999999;
+}
+
+.firebugLayoutLineRight {
+    border-right: 1px solid #999999;
+}
+
+.firebugLayoutLineBottom {
+    border-bottom: 1px solid #999999;
+}
+
+.firebugLayoutLineLeft {
+    margin-left: -1px;
+    border-left: 1px solid #999999;
+}
+</style><link href="sgdoesntwork_files/selectorgadget.css" media="screen" type="text/css" rel="stylesheet"><script src="sgdoesntwork_files/jquery.js" type="text/javascript"></script><script src="sgdoesntwork_files/diff_match_patch.js" type="text/javascript"></script><script src="sgdoesntwork_files/dom.js" type="text/javascript"></script><script src="sgdoesntwork_files/interface.js" type="text/javascript"></script></head><body topmargin="0" background="sgdoesntwork_files/backgr.gif" marginheight="0"> 
+<div align="center">
+<img src="sgdoesntwork_files/header-results.gif" alt="" class="printheader" usemap="#header-results" border="0" width="721" height="96">
+<table class="printtable" border="0" cellpadding="1" cellspacing="1" width="720">
+<col class="" width="80">
+<col class="" width="110">
+<col width="40">
+<col width="50">
+<col width="130">
+<col width="90">
+<col width="100">
+<col width="120">
+<tbody><tr class=""><td class="" colspan="8">
+<div class="" id="general">
+<div class="" id="inline">
+<a class="" href="http://www2.tau.ac.il/yedion/yedion.html"><img src="sgdoesntwork_files/newsearch.gif" alt="" class="hidebutton" border="0" width="84" height="34"></a>&nbsp;
+</div>
+<div class="" id="inline1">
+<a class="" href="http://www.ims.tau.ac.il/tal/"><img src="sgdoesntwork_files/info.gif" alt="" class="hidebutton" border="0" width="120" height="36"></a>
+</div>
+<div align="center">
+<img class="" src="sgdoesntwork_files/title-results.gif" alt="" align="center" border="0" width="200" height="30"><br class="">
+<b><span class="clryear">ט''סשת ל''הנש</span></b><br><span class="engname">15.03.2009</span><span class="clrdate">&nbsp; :ןורחא ןוכדע</span>
+</div>
+</div><br class="">
+</td></tr>
+ <tr class="" align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+הדידב הקיטמתמ&nbsp;<br class="">
+DISCRETE MATHEMATICS&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-1118-18</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1800 - 1600</td>
+ <td class="">'ג</td>
+    <td class="">107 </td>
+    <td class="">דוד ןד תותיכ</td>
+    <td class="">   ליגרת</td>
+    <td class="" colspan="2">    םולש-שיא     ןרוא רמ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-1118-18.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www.tau.ac.il/exact_sciences/yedion/math-syl/03681118.pdf" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03681118" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+1 הנכות&nbsp;<br class="">
+PROGRAMMING 1&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-2157-07</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1300 - 1000</td>
+ <td class="">'ג</td>
+    <td class="">001 </td>
+    <td class="">דוד ןד תותיכ</td>
+    <td class="">   רועיש</td>
+    <td class="" colspan="2">        ףלוו    רואיל ר"ד</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-2157-07.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://virtual.tau.ac.il/" title="קישור לוירטואל תאו" class="new" onmouseover="window.status='קישור לוירטואל תאו';return true;" onmouseout="window.status='';return true;">Virtual.t@u</a>&nbsp;&nbsp;
+  <a href="http://www.cs.tau.ac.il/courses/software1/0607b/" title="קישור לאתר הקורס" class="new" onmouseover="window.status='קישור לאתר הקורס';return true;" onmouseout="window.status='';return true;">רתא</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368215707" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=examin&amp;nam=1%20%E4%F0%EB%E5%FA&amp;num=0368-2157-07&amp;date1=05.07.2009&amp;hour1=0900&amp;build1=120&amp;room1=0822&amp;date2=09.09.2009&amp;hour2=0900&amp;build2=008&amp;room2=2" title="קישור למידע על מועד בחינה" class="new" onmouseover="window.status='קישור למידע על מועד בחינה';return true;" onmouseout="window.status='';return true;">הניחב</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03682157" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+םינותנ ינבמ&nbsp;<br class="">
+DATA STRUCTURES&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-2158-08</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1500 - 1400</td>
+ <td class="">'ג</td>
+    <td class="">204 </td>
+    <td class="">רקנש-הקיזיפ</td>
+    <td class="">   ליגרת</td>
+    <td class="" colspan="2">     םואבסונ      בהי רמ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-2158-08.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368215808" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03682158" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+םינותנ ינבמ&nbsp;<br class="">
+DATA STRUCTURES&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-2158-09</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1600 - 1500</td>
+ <td class="">'ג</td>
+    <td class="">204 </td>
+    <td class="">רקנש-הקיזיפ</td>
+    <td class="">   ליגרת</td>
+    <td class="" colspan="2">     םואבסונ      בהי רמ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-2158-09.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368215809" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03682158" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+םינותנ ינבמ&nbsp;<br class="">
+DATA STRUCTURES&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-2158-10</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1900 - 1600</td>
+ <td>'ג</td>
+    <td>007 </td>
+    <td>טלבצלוה / דמלמ 'דוא</td>
+    <td>   רועיש</td>
+    <td colspan="2">      ןירפלה      ןרע ר"ד</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-2158-10.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368215810" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=examin&amp;nam=%ED%E9%F0%E5%FA%F0%20%E9%F0%E1%EE&amp;num=0368-2158-10&amp;date1=19.07.2009&amp;hour1=0900&amp;build1=20&amp;room1=0822&amp;date2=13.09.2009&amp;hour2=0900&amp;build2=008&amp;room2=2" title="קישור למידע על מועד בחינה" class="new" onmouseover="window.status='קישור למידע על מועד בחינה';return true;" onmouseout="window.status='';return true;">הניחב</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03682158" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+םימתירוגלא&nbsp;<br class="">
+ALGORITHMS&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-2160-07</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1900 - 1600</td>
+ <td>'ג</td>
+    <td>009 </td>
+    <td>בל 'רוטידוא</td>
+    <td>   רועיש</td>
+    <td colspan="2">        ןולא     הגונ פורפ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-2160-07.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www.tau.ac.il/%7Elea/eff.htm" title="קישור לאתר הקורס" class="new" onmouseover="window.status='קישור לאתר הקורס';return true;" onmouseout="window.status='';return true;">רתא</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368216007" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=examin&amp;nam=%ED%E9%EE%FA%E9%F8%E5%E2%EC%E0&amp;num=0368-2160-07&amp;date1=02.07.2009&amp;hour1=0900&amp;build1=20&amp;room1=0822&amp;date2=25.09.2009&amp;hour2=0900&amp;build2=008&amp;room2=2" title="קישור למידע על מועד בחינה" class="new" onmouseover="window.status='קישור למידע על מועד בחינה';return true;" onmouseout="window.status='';return true;">הניחב</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03682160" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+הנכות טקיורפ&nbsp;<br class="">
+SOFTWARE PROJECT&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-2161-05</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1500 - 1300</td>
+ <td>'ג</td>
+    <td>007 </td>
+    <td>טלבצלוה / דמלמ 'דוא</td>
+    <td>  טקיורפ</td>
+    <td colspan="2">        רורד    ןועדג פורפ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-2161-05.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www.cs.tau.ac.il/%7Eroded/courses/soft-project07-semb.html" title="קישור לאתר הקורס" class="new" onmouseover="window.status='קישור לאתר הקורס';return true;" onmouseout="window.status='';return true;">רתא</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368216105" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=examin&amp;nam=%E4%F0%EB%E5%FA%20%E8%F7%E9%E5%F8%F4&amp;num=0368-2161-05&amp;date1=20.07.2009&amp;hour1=0900&amp;build1=20&amp;room1=0822&amp;date2=15.10.2009&amp;hour2=0900&amp;build2=008&amp;room2=2" title="קישור למידע על מועד בחינה" class="new" onmouseover="window.status='קישור למידע על מועד בחינה';return true;" onmouseout="window.status='';return true;">הניחב</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03682161" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+הלעפה תוכרעמ&nbsp;<br class="">
+OPERATING SYSTEMS&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-2162-06</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1400 - 1300</td>
+ <td>'ג</td>
+    <td>118 </td>
+    <td>ןולפק</td>
+    <td>   ליגרת</td>
+    <td colspan="2">     ןי'צרפא  רדנסכלא רמ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-2162-06.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www.cs.tau.ac.il/%7Enatali/OS02.html" title="קישור לאתר הקורס" class="new" onmouseover="window.status='קישור לאתר הקורס';return true;" onmouseout="window.status='';return true;">רתא</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368216206" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03682162" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+הלעפה תוכרעמ&nbsp;<br class="">
+OPERATING SYSTEMS&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-2162-08</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1500 - 1400</td>
+ <td class="">'ג</td>
+    <td class="">008 </td>
+    <td class="">יטמתמ רביירש</td>
+    <td class="">   ליגרת</td>
+    <td class="" colspan="2">     ןי'צרפא  רדנסכלא רמ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-2162-08.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368216208" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03682162" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+בשחמה יעדמל הקיגול&nbsp;<br class="">
+LOGIC FOR COMPUTER SCIENCE&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-2170-06</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1100 - 1000</td>
+ <td>'ג</td>
+    <td>007 </td>
+    <td>יטמתמ רביירש</td>
+    <td>   ליגרת</td>
+    <td colspan="2">         ןהכ    ןוריל 'בג</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-2170-06.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://virtual.tau.ac.il/" title="קישור לוירטואל תאו" class="new" onmouseover="window.status='קישור לוירטואל תאו';return true;" onmouseout="window.status='';return true;">Virtual.t@u</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368217006" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03682170" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+בשחמה יעדמל הקיגול&nbsp;<br class="">
+LOGIC FOR COMPUTER SCIENCE&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-2170-07</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1200 - 1100</td>
+ <td>'ג</td>
+    <td>007 </td>
+    <td>יטמתמ רביירש</td>
+    <td>   ליגרת</td>
+    <td colspan="2">         ןהכ    ןוריל 'בג</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-2170-07.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://virtual.tau.ac.il/" title="קישור לוירטואל תאו" class="new" onmouseover="window.status='קישור לוירטואל תאו';return true;" onmouseout="window.status='';return true;">Virtual.t@u</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368217007" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03682170" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+תויכוביס&nbsp;<br class="">
+COMPUTATIONAL COMPLEXITY&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-3168-07</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1300 - 1000</td>
+ <td>'ג</td>
+    <td>006 </td>
+    <td>יטמתמ רביירש</td>
+    <td>   רועיש</td>
+    <td colspan="2">         בגר     דדוע פורפ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-3168-07.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www.cs.tau.ac.il/courses/Complexity/09b/" title="קישור לאתר הקורס" class="new" onmouseover="window.status='קישור לאתר הקורס';return true;" onmouseout="window.status='';return true;">רתא</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368316807" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=examin&amp;nam=%FA%E5%E9%EB%E5%E1%E9%F1&amp;num=0368-3168-07&amp;date1=03.07.2009&amp;hour1=0900&amp;build1=20&amp;room1=0822&amp;date2=10.08.2009&amp;hour2=0900&amp;build2=008&amp;room2=2" title="קישור למידע על מועד בחינה" class="new" onmouseover="window.status='קישור למידע על מועד בחינה';return true;" onmouseout="window.status='';return true;">הניחב</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03683168" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+תויכוביס&nbsp;<br class="">
+COMPUTATIONAL COMPLEXITY&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-3168-08</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1600 - 1500</td>
+ <td class="">'ג</td>
+    <td class="">118 </td>
+    <td class="">ןולפק</td>
+    <td class="">   ליגרת</td>
+    <td class="" colspan="2">   רזעילא ןב     ודיע רמ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-3168-08.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368316808" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03683168" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+תויכוביס&nbsp;<br class="">
+COMPUTATIONAL COMPLEXITY&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-3168-10</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1700 - 1600</td>
+ <td>'ג</td>
+    <td>008 </td>
+    <td>יטמתמ רביירש</td>
+    <td>   ליגרת</td>
+    <td colspan="2">   רזעילא ןב     ודיע רמ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-3168-10.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368316810" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03683168" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+תויכוביס&nbsp;<br class="">
+COMPUTATIONAL COMPLEXITY&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-3168-11</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1900 - 1800</td>
+ <td>'ג</td>
+    <td>008 </td>
+    <td>יטמתמ רביירש</td>
+    <td>   ליגרת</td>
+    <td colspan="2">        ביבח      ישי רמ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-3168-11.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368316811" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03683168" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+בשחמ תוצבושמ תוכרעמב ןוכיתו תושירד חותינ תוטיש&nbsp;<br class="">
+REQUIR.ANALYSIS &amp; DESIGN METH. FOR EMBEDDED COMPUTER SYS&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-3243-01</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">2000 - 1700</td>
+ <td>'ג</td>
+    <td>222 </td>
+    <td>רקנש-הקיזיפ</td>
+    <td>   רועיש</td>
+    <td colspan="2">     רוקוניו    לאכימ ר"ד</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-3243-01.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=examin&amp;nam=%E1%F9%E7%EE%20%FA%E5%F6%E1%E5%F9%EE%20%FA%E5%EB%F8%F2%EE%E1%20%EF%E5%EB%E9%FA%E5%20%FA%E5%F9%E9%F8%E3%20%E7%E5%FA%E9%F0%20%FA%E5%E8%E9%F9&amp;num=0368-3243-01&amp;date1=23.06.2009&amp;hour1=0900&amp;build1=20&amp;room1=0822&amp;date2=08.09.2009&amp;hour2=0900&amp;build2=008&amp;room2=2" title="קישור למידע על מועד בחינה" class="new" onmouseover="window.status='קישור למידע על מועד בחינה';return true;" onmouseout="window.status='';return true;">הניחב</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03683243" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+הליהקב בשחמה יעדמ תארוה&nbsp;<br class="">
+A&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-3245-02</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1500 - 1200</td>
+ <td>'ג</td>
+    <td>104 </td>
+    <td>ןייטשנרוא</td>
+    <td>   רועיש</td>
+    <td colspan="2">        טנרב   ןתנוהי רמ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-3245-02.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=examin&amp;nam=%E4%EC%E9%E4%F7%E1%20%E1%F9%E7%EE%E4%20%E9%F2%E3%EE%20%FA%E0%F8%E5%E4&amp;num=0368-3245-02&amp;date1=10.07.2009&amp;hour1=0900&amp;build1=20&amp;room1=0822&amp;date2=09.08.2009&amp;hour2=0900&amp;build2=008&amp;room2=2" title="קישור למידע על מועד בחינה" class="new" onmouseover="window.status='קישור למידע על מועד בחינה';return true;" onmouseout="window.status='';return true;">הניחב</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03683245" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+הנומת דוביעל אובמ&nbsp;<br class="">
+INTRODUCTION TO IMAGE PROCESSING&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-3246-01</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1300 - 1000</td>
+ <td>'ג</td>
+    <td>007 </td>
+    <td>טלבצלוה / דמלמ 'דוא</td>
+    <td>   רועיש</td>
+    <td colspan="2">    ןור-ביגש       ןח ר"ד</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-3246-01.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://virtual.tau.ac.il/" title="קישור לוירטואל תאו" class="new" onmouseover="window.status='קישור לוירטואל תאו';return true;" onmouseout="window.status='';return true;">Virtual.t@u</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368324601" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=examin&amp;nam=%E4%F0%E5%EE%FA%20%E3%E5%E1%E9%F2%EC%20%E0%E5%E1%EE&amp;num=0368-3246-01&amp;date1=05.07.2009&amp;hour1=0900&amp;build1=120&amp;room1=0822&amp;date2=17.09.2009&amp;hour2=0900&amp;build2=008&amp;room2=2" title="קישור למידע על מועד בחינה" class="new" onmouseover="window.status='קישור למידע על מועד בחינה';return true;" onmouseout="window.status='';return true;">הניחב</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03683246" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+םיבשחמ תרושקת תותשרב רנימס&nbsp;<br class="">
+SEMINAR IN COMMUNICATION NETWORKS&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-3388-01</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1500 - 1300</td>
+ <td>'ג</td>
+    <td>324 </td>
+    <td>ןולפק</td>
+    <td>   רנימס</td>
+    <td colspan="2">         יול     ךונח פורפ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-3388-01.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www.cs.tau.ac.il/%7Ehanoch/Courses/Seminar-2009/seminar-page.htm" title="קישור לאתר הקורס" class="new" onmouseover="window.status='קישור לאתר הקורס';return true;" onmouseout="window.status='';return true;">רתא</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368338801" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03683388" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+עדימ תוכרעמ תודוסי&nbsp;<br class="">
+PRINCIPLES OF INFORMATION SYSTEMS&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-3455-01</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">2000 - 1700</td>
+ <td>'ג</td>
+    <td>104 </td>
+    <td>רקנש-הקיזיפ</td>
+    <td>   רועיש</td>
+    <td colspan="2">    ןייטשלימ   הניריא ר"ד</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-3455-01.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://virtual.tau.ac.il/" title="קישור לוירטואל תאו" class="new" onmouseover="window.status='קישור לוירטואל תאו';return true;" onmouseout="window.status='';return true;">Virtual.t@u</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368345501" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=examin&amp;nam=%F2%E3%E9%EE%20%FA%E5%EB%F8%F2%EE%20%FA%E5%E3%E5%F1%E9&amp;num=0368-3455-01&amp;date1=25.06.2009&amp;hour1=0900&amp;build1=120&amp;room1=0822&amp;date2=11.10.2009&amp;hour2=0900&amp;build2=008&amp;room2=2" title="קישור למידע על מועד בחינה" class="new" onmouseover="window.status='קישור למידע על מועד בחינה';return true;" onmouseout="window.status='';return true;">הניחב</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03683455" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+בשחמה יעדמב הנדס&nbsp;<br class="">
+WORKSHOP IN COMPUTER SCIENCE&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-3500-20</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1500 - 1200</td>
+ <td>'ג</td>
+    <td>    </td>
+    <td></td>
+    <td>   הדבעמ</td>
+    <td colspan="2">      ןירפלה       ןד פורפ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-3500-20.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www.cs.tau.ac.il/%7Edanha/courses/sadna08-packing.html" title="קישור לאתר הקורס" class="new" onmouseover="window.status='קישור לאתר הקורס';return true;" onmouseout="window.status='';return true;">רתא</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03683500" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+בשחמה יעדמב הנדס&nbsp;<br class="">
+WORKSHOP IN COMPUTER SCIENCE&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-3500-28</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1500 - 1300</td>
+ <td>'ג</td>
+    <td>319 </td>
+    <td>ןולפק</td>
+    <td>    הנדס</td>
+    <td colspan="2">       סאיטמ     ףסוי פורפ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-3500-28.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://sites.google.com/site/taugadgets09b/" title="קישור לאתר הקורס" class="new" onmouseover="window.status='קישור לאתר הקורס';return true;" onmouseout="window.status='';return true;">רתא</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03683500" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+בשחמה יעדמב הנדס&nbsp;<br class="">
+WORKSHOP IN COMPUTER SCIENCE&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-3500-30</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1300 - 1000</td>
+ <td>'ג</td>
+    <td>    </td>
+    <td></td>
+    <td>   הדבעמ</td>
+    <td colspan="2">      יליזרב     דהוא רמ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-3500-30.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://sites.google.com/site/taugadgets09b/" title="קישור לאתר הקורס" class="new" onmouseover="window.status='קישור לאתר הקורס';return true;" onmouseout="window.status='';return true;">רתא</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368350030" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03683500" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+בשחמה יעדמב הנדס&nbsp;<br class="">
+WORKSHOP IN COMPUTER SCIENCE&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-3500-48</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1900 - 1600</td>
+ <td>'ג</td>
+    <td>    </td>
+    <td></td>
+    <td>   הדבעמ</td>
+    <td colspan="2">    גרבנדייז      רצנ רמ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-3500-48.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://virtual.tau.ac.il/" title="קישור לוירטואל תאו" class="new" onmouseover="window.status='קישור לוירטואל תאו';return true;" onmouseout="window.status='';return true;">Virtual.t@u</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03683500" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+ישילש ראותל תיעדמ הביתכ&nbsp;<br class="">
+SCIENTIFIC WRITING&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-4000-03</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1300 - 1200</td>
+ <td>'ג</td>
+    <td>    </td>
+    <td></td>
+    <td>   הדבעמ</td>
+    <td colspan="2">        שבינ   לאירבג רמ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-4000-03.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03684000" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+יבצע בושיחב תיטסיטטס הדימל&nbsp;<br class="">
+NEURAL COMPUTATION&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-4149-01</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1900 - 1600</td>
+ <td>'ג</td>
+    <td>118 </td>
+    <td>ןולפק</td>
+    <td>   רועיש</td>
+    <td colspan="2">    רוטרטניא      ןתנ פורפ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-4149-01.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www.cs.tau.ac.il/%7Enin/Courses/NC08/NC0708B.htm" title="קישור לאתר הקורס" class="new" onmouseover="window.status='קישור לאתר הקורס';return true;" onmouseout="window.status='';return true;">רתא</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368414901" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=examin&amp;nam=%E9%E1%F6%F2%20%E1%E5%F9%E9%E7%E1%20%FA%E9%E8%F1%E9%E8%E8%F1%20%E4%E3%E9%EE%EC&amp;num=0368-4149-01&amp;date1=14.07.2009&amp;hour1=0900&amp;build1=20&amp;room1=0822&amp;date2=15.09.2009&amp;hour2=0900&amp;build2=008&amp;room2=2" title="קישור למידע על מועד בחינה" class="new" onmouseover="window.status='קישור למידע על מועד בחינה';return true;" onmouseout="window.status='';return true;">הניחב</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03684149" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+םימתירוגלא חותינ&nbsp;<br class="">
+ANALYSIS OF ALGORITHMS&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-4222-01</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1800 - 1500</td>
+ <td>'ג</td>
+    <td>006 </td>
+    <td>טלבצלוה / דמלמ 'דוא</td>
+    <td>רתו רועש</td>
+    <td colspan="2">       קיווצ     ירוא פורפ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-4222-01.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www.cs.tau.ac.il/%7Ezwick/grad-alg-07.html" title="קישור לאתר הקורס" class="new" onmouseover="window.status='קישור לאתר הקורס';return true;" onmouseout="window.status='';return true;">רתא</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0368422201" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=examin&amp;nam=%ED%E9%EE%FA%E9%F8%E5%E2%EC%E0%20%E7%E5%FA%E9%F0&amp;num=0368-4222-01&amp;date1=23.06.2009&amp;hour1=0900&amp;build1=20&amp;room1=0822&amp;date2=21.07.2009&amp;hour2=0900&amp;build2=008&amp;room2=2" title="קישור למידע על מועד בחינה" class="new" onmouseover="window.status='קישור למידע על מועד בחינה';return true;" onmouseout="window.status='';return true;">הניחב</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03684222" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+עדימ רוזחאו תיעבט הפש דוביע&nbsp;<br class="">
+NATURAL LANGUAGE PROCESSING AND INFORMATION RETRIEVAL&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-4341-01</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1800 - 1500</td>
+ <td>'ג</td>
+    <td>005 </td>
+    <td>ךאד</td>
+    <td>   רועיש</td>
+    <td colspan="2">        רורד    ןועדג פורפ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-4341-01.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://www.tau.ac.il/exact_sciences/yedion/math-syl/03684341.doc" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03684341" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+תבשחוממ הקיפרגב םימדקתמ םיאשונ רנימס&nbsp;<br class="">
+ADVANCED SEMINAR&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-5081-01</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'א 'מס</td>
+ <td class="">1900 - 1700</td>
+ <td>'ג</td>
+    <td>309 </td>
+    <td>יטמתמ רביירש</td>
+    <td>   רנימס</td>
+    <td colspan="2">     רוא ןהכ      ינד פורפ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right">
+  <td class="">'ב 'מס</td>
+  <td class="">1900 - 1700</td>
+  <td>'ג</td>
+  <td>309 </td>
+  <td>יטמתמ רביירש</td>
+  <td>   רנימס</td>
+ </tr>
+<tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-5081-01.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03685081" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+בשחמה יעדמ לש הירואיתב םימדקתמ םיאשונ רנימס&nbsp;<br class="">
+ADVANCED SEMUNAR&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0368-5085-01</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+בשחמה יעדמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'א 'מס</td>
+ <td class="">1500 - 1300</td>
+ <td>'ג</td>
+    <td>309 </td>
+    <td>יטמתמ רביירש</td>
+    <td>   רנימס</td>
+    <td colspan="2">        ארפס    לאומש פורפ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right">
+  <td class="">'ב 'מס</td>
+  <td class="">1500 - 1300</td>
+  <td>'ג</td>
+  <td>309 </td>
+  <td>יטמתמ רביירש</td>
+  <td>   רנימס</td>
+ </tr>
+<tr align="right">
+<td class="" colspan="8">        הפמק   הילוי ר"ד</td>
+ </tr>
+<tr align="right">
+<td class="" colspan="8">         בגר    דדוע פורפ</td>
+ </tr>
+<tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0368-5085-01.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03685085" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+1 תינבמ הקיטמרופניאויב&nbsp;<br class="">
+STRUCTURAL  BIOINFORMATICS1&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0382-3101-01</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+הקיטמרופניאויב לולסמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1200 - 0900</td>
+ <td>'ג</td>
+    <td>008 </td>
+    <td>יטמתמ רביירש</td>
+    <td>   רועיש</td>
+    <td colspan="2">     ןוספלוו   י םייח פורפ</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0382-3101-01.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://virtual.tau.ac.il/" title="קישור לוירטואל תאו" class="new" onmouseover="window.status='קישור לוירטואל תאו';return true;" onmouseout="window.status='';return true;">Virtual.t@u</a>&nbsp;&nbsp;
+  <a href="http://www2.tau.ac.il/yedion/syllabus.asp?course=0382310101" title="קישור לסילבוס של הקורס" class="new" onmouseover="window.status='קישור לסילבוס של הקורס';return true;" onmouseout="window.status='';return true;">סובליס</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03823101" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+ <tr align="right" bgcolor="#c2d1ff">
+    <td class="" colspan="7" align="right">
+    <img class="" src="sgdoesntwork_files/course-name.gif" alt="" border="0" width="81" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/course-num.gif" alt="" border="0" width="90" height="17"></td>
+ </tr><tr>
+    <th colspan="7" class="border-right" align="right" valign="top">
+1 תינבמ הקיטמרופניאויב&nbsp;<br class="">
+STRUCTURAL  BIOINFORMATICS1&nbsp;
+    </th>
+    <th class="" align="right" bgcolor="#c2d1ff">0382-3101-02</th>
+ </tr><tr>
+    <th colspan="8" class="border" align="right" bgcolor="#feccff">
+הקיטמרופניאויב לולסמ/םיקיודמ&nbsp;םיעדמ</th>
+ </tr><tr align="right" bgcolor="#c2d1ff">
+    <td class=""><img class="" src="sgdoesntwork_files/semester.gif" alt="" border="0" width="44" height="17"></td>
+    <td class=""><img class="" src="sgdoesntwork_files/hour.gif" alt="" border="0" width="55" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/day.gif" alt="" border="0" width="20" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/room.gif" alt="" border="0" width="28" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/build.gif" alt="" border="0" width="80" height="17"></td>
+    <td><img class="" src="sgdoesntwork_files/type.gif" alt="" border="0" width="62" height="17"></td>
+    <td colspan="2"><img class="" src="sgdoesntwork_files/lecturer.gif" alt="" border="0" width="81" height="17"></td>
+ </tr><tr align="right">
+    <td class="">'ב 'מס</td>
+ <td class="">1300 - 1200</td>
+ <td>'ג</td>
+    <td>008 </td>
+    <td>יטמתמ רביירש</td>
+    <td>   ליגרת</td>
+    <td colspan="2">        חישמ     תרפא 'בג</td>
+ </tr><tr align="right">
+
+</tr><tr align="right" bgcolor="#c2d1ff">
+<td colspan="8" class="bordertop">
+  <a href="http://listserv.tau.ac.il/archives/0382-3101-02.html" title="קישור לרשימת התפוצה של הקורס" class="new" onmouseover="window.status='קישור לרשימת התפוצה של הקורס';return true;" onmouseout="window.status='';return true;">הצופתה תמישר</a>&nbsp;&nbsp;
+  <a href="http://bioinfo3d.cs.tau.ac.il/Education/CS0506/" title="קישור לאתר הקורס" class="new" onmouseover="window.status='קישור לאתר הקורס';return true;" onmouseout="window.status='';return true;">רתא</a>&nbsp;&nbsp;
+<a href="http://yedion.tau.ac.il/yed/yednew.dll?MfcISAPICommand=req&amp;year=2008&amp;course_num=03823101" title="דרישות קדם" class="new" onmouseover="window.status='דרישות קדם';return true;" onmouseout="window.status='';return true;">םדק תושירד</a>
+</td></tr>
+<tr><td class="" colspan="8">&nbsp;</td></tr>
+</tbody></table></div>
+<br>
+
+<map name="header-results"><area shape="rect" coords="381,3,720,93" href="http://www.tau.ac.il/" title=""><area shape="default" nohref=""></map><script src="sgdoesntwork_files/selectorgadget_edge.js" type="text/javascript"></script></body></html>
