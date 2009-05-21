@@ -1,10 +1,10 @@
-addStatusBarPanel({
+jetpack.statusBar.append({
   html: '<img src="data:image/png; base64, iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0\nd2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAANpJREFUeNrUk9ENgjAQhotx\nAVYoI+ATzziCjqAj6Ag4gh1BRoBnnuwIOoKMUO+SD1KNJCY8GC/5uMi11//+\nYhJCMHNiYWbG7xss9bEuCk0boRKs0AtboWVdRd3y+yQcm64bFWjhIjgh0Z7R\nIVc276llwv1FQdTZkT35QC1DlWGze/fAs6DhtCF2Qh1tnjSxj2TrKDch5/T2\n21tQFSvoaaSRRmu0cYBy6ho9LlvmzaNahpGjb7GJJfOmzO4x64yimnf20wgW\nxx/INHwHjpxjcKDuh5tK/v/P9BRgAM2cNoXQhlNqAAAAAElFTkSuQmCC"/>',
-  onLoad: function(panel) {
+  onReady: function(panel) {
     var button = $(panel).find("img");
     button.css({cursor: "pointer"});
     button.click(function() {
-      var d = Application.activeWindow.activeTab.document;
+      var d = jetpack.tabs.focused.contentWindow.document;
       var body = $(d).find("body");
       var elem = $("<div>Loading...</div>");
       elem.css({
