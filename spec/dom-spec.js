@@ -103,8 +103,8 @@ describe("DomPredictionHelper", function() {
       expect(dom.escapeCssNames("this>is>a>test")).toEqual("this\\>is\\>a\\>test");
       expect(dom.escapeCssNames("this,is,a,test")).toEqual("this\\,is\\,a\\,test");
       expect(dom.escapeCssNames("this,is,a|test")).toEqual("this\\,is\\,a\\|test");
-      expect(dom.escapeCssNames("s_42sg_g_blahblah")).toEqual("");
-      expect(dom.escapeCssNames("s_42sg_g_suggested")).toEqual("");
+      expect(dom.escapeCssNames("selectorgadget_blahblah")).toEqual("");
+      expect(dom.escapeCssNames("selectorgadget_suggested")).toEqual("");
       expect(dom.escapeCssNames("suggested ")).toEqual("suggested"); // Paranoid - remove spaces.
       expect(dom.escapeCssNames("hello\\")).toEqual("hello\\\\");
   		expect(dom.escapeCssNames("iCIMS_InfoMsg_Job")).toEqual("iCIMS_InfoMsg_Job");

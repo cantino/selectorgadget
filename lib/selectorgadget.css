@@ -1,4 +1,4 @@
-div#_s_42_g_div {
+div#selectorgadget_main {
   azimuth: center !important;
   background-attachment: scroll !important;
   background-image: none !important;
@@ -67,7 +67,7 @@ div#_s_42_g_div {
   background:white !important;
   text-align:left !important;
 }
-div#_s_42_g_div *, .s_42sg_g_clean, .s_42sg_g_clean * {
+div#selectorgadget_main *, .selectorgadget_clean, .selectorgadget_clean * {
   azimuth: center;
   background-attachment: scroll;
   background-image: none;
@@ -131,12 +131,12 @@ div#_s_42_g_div *, .s_42sg_g_clean, .s_42sg_g_clean * {
   background:white;
   text-align:left;  
 }
-.s_42sg_g_clean a {
+.selectorgadget_clean a {
 	color: blue;
 	text-decoration: underline;
 	cursor: pointer;
 }
-div#_s_42_g_div .s_42sg_g_input_field{
+div#selectorgadget_main .selectorgadget_input_field {
     display:block;
     float:left;
     margin:0 7px 0 0;
@@ -152,38 +152,38 @@ div#_s_42_g_div .s_42sg_g_input_field{
     padding:5px 8px 6px 7px;
 }
 
-div#_s_42_g_div .s_42sg_g_wizard {
+div#selectorgadget_main .selectorgadget_wizard {
 }
 
-div#_s_42_g_div .s_42sg_g_wizard .s_42sg_g_input_field {
+div#selectorgadget_main .selectorgadget_wizard .selectorgadget_input_field {
   margin: 7px 3px 7px 3px;
   float: none;
   display: inline;
 }
 
-div#_s_42_g_div .s_42sg_g_prompt {
+div#selectorgadget_main .selectorgadget_prompt {
   margin: 3px 0px 3px 0px;
   font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
   font-weight: bold;
   float: none;
 }
 
-div#_s_42_g_div .s_42sg_g_wizard #_sg_path_field {
+div#selectorgadget_main .selectorgadget_wizard #selectorgadget_path_field {
   margin: 5px 0px;
   clear: both;
   float: none;
   display: block;
 }
 
-.s_42sg_g_selected{
+.selectorgadget_selected {
   background-color:#0F0 !important;
   background-image:none !important;
 }
-.s_42sg_g_suggested{
+.selectorgadget_suggested {
   background-color:#FF5 !important;
   background-image:none !important;
 }
-.s_42sg_g_border{
+.selectorgadget_border {
   position:absolute !important;
   z-index:999999 !important;
   background:white !important;
@@ -198,47 +198,47 @@ div#_s_42_g_div .s_42sg_g_wizard #_sg_path_field {
   vertical-align:baseline !important;
   text-align:left !important;
 }
-.s_42sg_g_bottom_border{
+.selectorgadget_bottom_border {
   font-size:10px !important;
   padding:2px 0px 2px 5px !important;
 }
-.s_42sg_g_border_red{
+.selectorgadget_border_red {
   background-color:#F00 !important;
 }
-.s_42sg_g_highlighted{
+.selectorgadget_highlighted {
 }
-.s_42sg_g_rejected{
+.selectorgadget_rejected {
   background-color:#F00 !important;
   background-image:none !important;
 }
-img.s_42sg_g_rejected{
+img.selectorgadget_rejected {
   border:5px solid #F00 !important;
 }
-img.s_42sg_g_suggested{
+img.selectorgadget_suggested {
   border:5px solid #FF5 !important;
 }
-img.s_42sg_g_selected{
+img.selectorgadget_selected {
   border:5px solid #0F0 !important;
 }
-#_s_42_g_div.s_42sg_g_top{
+#selectorgadget_main.selectorgadget_top {
   top:5px !important;
 }
-#_s_42_g_div.s_42sg_g_bottom{
+#selectorgadget_main.selectorgadget_bottom {
   bottom:5px !important;
 }
-#_s_42_g_div input{
+#selectorgadget_main input {
   margin-right:10px !important;
   font-size:15px !important;
 }
-#_sg_path_field{
+#selectorgadget_path_field {
   width:400px !important;
 }
-#_s_42_g_div .s_42sg_g_new_line {
+#selectorgadget_main .selectorgadget_new_line {
   clear: both;
 }
-#_s_42_g_div .s_42sg_g_option {
+#selectorgadget_main .selectorgadget_option {
   float: left;
 }
-#_s_42_g_div .s_42sg_g_selected_option {
+#selectorgadget_main .selectorgadget_selected_option {
   text-decoration: underline;
 }
