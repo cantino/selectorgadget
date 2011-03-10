@@ -8,7 +8,7 @@ jetpack.statusBar.append({
       var body = $(d).find("body");
       var elem = $("<div>Loading...</div>");
       elem.css({
-        color: "black", 
+        color: "black",
         padding: '20px',
         position: 'fixed',
         zIndex: '9999',
@@ -21,7 +21,7 @@ jetpack.statusBar.append({
       body.append(elem);
       var s = d.createElement('script');
       s.setAttribute('type','text/javascript');
-      s.setAttribute('src','http://www.selectorgadget.com/stable/lib/selectorgadget.js?raw=true');
+      s.setAttribute('src','http://github.com/naterkane/selectorgadget/raw/master/lib/selectorgadget.js?raw=true');
       d.body.appendChild(s);
     });
   },
