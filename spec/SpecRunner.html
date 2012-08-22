@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>SelectorGadget Jasmine Specs</title>
+  <link rel="stylesheet" type="text/css" href="../vendor/jasmine/jasmine.css">
+  <script type="text/javascript" src="../vendor/jasmine/jasmine.js"></script>
+  <script type="text/javascript" src="../vendor/jasmine/jasmine-html.js"></script>
+
+  <!-- include source files here... -->
+  <script type="text/javascript" src="../vendor/jquery.js"></script>
+  <script>
+    window.jQuerySG = jQuery.noConflict(true);
+  </script>
+  <script type="text/javascript" src="../vendor/diff/diff_match_patch.js"></script>
+
+  <script type="text/javascript" src="../lib/core.js"></script>
+  <script type="text/javascript" src="../lib/dom.js"></script>
+  <script type="text/javascript" src="../lib/wizard.js"></script>
+  <link rel="stylesheet" type="text/css" href="../lib/selectorgadget.css">
+
+  <!-- include spec files here... -->
+  <script type="text/javascript" src="spec-helper.js"></script>
+  <script type="text/javascript" src="core-spec.js"></script>
+  <script type="text/javascript" src="dom-spec.js"></script>
+  <script type="text/javascript" src="wizard-spec.js"></script>
+
+  <style>
+    #jasmine-content {
+      display: none;
+    }
+  </style>
+
+</head>
+<body>
+<script type="text/javascript">
+  (function () {
+    var jasmineEnv = jasmine.getEnv();
+    jasmineEnv.updateInterval = 1000;
+
+    var htmlReporter = new jasmine.HtmlReporter();
+
+    jasmineEnv.addReporter(htmlReporter);
+
+    jasmineEnv.specFilter = function (spec) {
+      return htmlReporter.specFilter(spec);
+    };
+
+    var currentWindowOnload = window.onload;
+
+    window.onload = function () {
+      if (currentWindowOnload) {
+        currentWindowOnload();
+      }
+      execJasmine();
+    };
+
+    function execJasmine() {
+      jasmineEnv.execute();
+    }
+
+  })();
+</script>
+<div id='jasmine-content'></div>
+</body>
+</html>

@@ -90,12 +90,12 @@ describe("DomPredictionHelper", function() {
                     "<font color='003366'><strong><u>Job Title:</u><span class='wrap'>Manager, Strategic Systems</span></strong></font><br>" +
                     "<font color='003366'><strong><u>Location:</u><span class='wrap'>El Segundo, CA  (Los Angeles)</span></strong></font><br><br>"
   };
-  
+
   var dom;
   beforeEach(function() {
     dom = new DomPredictionHelper();
   });
-  
+
   describe("escapeCssNames", function() {
     it("escapes illegal characters in css", function() {
       expect(dom.escapeCssNames("this.is.a.test")).toEqual("this\\.is\\.a\\.test");
@@ -126,7 +126,7 @@ describe("DomPredictionHelper", function() {
       expect(dom.tokenizeCss("strong~ h1:nth-child(2)+ b")).toEqual(["strong", "~", " ", "h1", ":nth-child(2)", "+", " ", "b"]);
     });
   });
-  
+
   describe("tokenizeCssForDiff", function() {
     it("should tokenize css for diffing", function() {
       expect(dom.tokenizeCssForDiff("div > id")).toEqual(["div", " ", ">", " ", "id"]);
@@ -134,7 +134,7 @@ describe("DomPredictionHelper", function() {
       expect(dom.tokenizeCssForDiff("strong#hi~ h1:nth-child(2)+ b")).toEqual(["strong#hi~", " ", "h1:nth-child(2)+", " ", "b"]);
     });
   });
-  
+
   describe("encodeCssForDiff", function() {
     it("should encode the css in preparation for diffing", function() {
       var existing_tokens = {};
@@ -149,7 +149,7 @@ describe("DomPredictionHelper", function() {
       expect(dom.invertObject(existing_tokens)[new_strings[0].substring(3, 4)]).toEqual('#main');
       expect(new_strings[0].substring(5, 6)).not.toEqual(new_strings[1].substring(5, 6));
     });
-    
+
     it("should encode and decode to the same values", function() {
       var existing_tokens = {};
       var strings = ["body div#main #something", "body div#main #something_else"];
@@ -157,7 +157,7 @@ describe("DomPredictionHelper", function() {
       expect(dom.decodeCss(new_strings[0], existing_tokens)).toEqual("body div#main #something");
     });
   });
-  
+
   describe("cleanCss", function() {
     it("should clean unneeded white space and child and sibling selectors", function() {
       expect(dom.cleanCss("tr>td#hi")).toEqual("tr > td#hi");
@@ -184,13 +184,13 @@ describe("DomPredictionHelper", function() {
 
       var p1 = dom.pathOf(jQuerySG('#parent1 span.sibling:nth-child(1)').get(0));
       var p2 = dom.pathOf(jQuerySG('#parent1 span.sibling:nth-child(2)').get(0));
-      expect(dom.cssDiff([ p1, p2 ])).toEqual('body > div.jasmine_reporter:nth-child(2)+ div#jasmine-content:nth-child(3) > div#parent1:nth-child(1) > span.sibling');
+      expect(dom.cssDiff([ p1, p2 ])).toEqual('body > div#jasmine-content:nth-child(2) > div#parent1:nth-child(1) > span.sibling');
 
       expect(dom.cssDiff(["ul li#foo", "li div#foo"])).toEqual('li#foo');
       expect(dom.cssDiff(["ul > li#foo", "ul > li > ol > li#foo"])).toEqual('ul > li#foo');
     });
   });
-  
+
   describe("childElemNumber", function() {
     it("returns the element number of the child", function() {
       var parent = jQuerySG('<div>').append(jQuerySG('<b>hello</b>')).append(jQuerySG('<b>hi</b>')).append(document.createTextNode('hi')).append(jQuerySG('<b>there</b>')).get(0);
@@ -203,6 +203,7 @@ describe("DomPredictionHelper", function() {
       expect(dom.childElemNumber(jQuerySG(':nth-child(3)', parent).get(0))).toEqual(2);
     });
   });
+
   describe("pathOf", function() {
     beforeEach(function() {
       jQuerySG("#jasmine-content").append(fixtures.class_name_tests).append(fixtures.leaves);
@@ -214,9 +215,9 @@ describe("DomPredictionHelper", function() {
       expect(dom.pathOf(jQuerySG('#class_name_tests #moo').get(0)).indexOf(".iCIMS_InfoMsg.iCIMS_InfoMsg_Job")).toBeGreaterThan(-1);
       expect(dom.pathOf(jQuerySG('#class_name_tests #moo').get(0)).indexOf("body:nth-child")).toEqual(-1);
     });
-    
+
     it("should add siblings with pluses and tildes", function() {
-      expect(dom.pathOf(jQuerySG('#parent1 .sibling.something.else').get(0)).indexOf("span#some_id.sibling:nth-child(1)+ span.sibling.something.else:nth-child(2)")).toBeGreaterThan(-1);      
+      expect(dom.pathOf(jQuerySG('#parent1 .sibling.something.else').get(0)).indexOf("span#some_id.sibling:nth-child(1)+ span.sibling.something.else:nth-child(2)")).toBeGreaterThan(-1);
     });
   });
 
@@ -224,7 +225,7 @@ describe("DomPredictionHelper", function() {
     it("does ascii encoding", function() {
       expect(dom.encodeContentString("abc")).toEqual("97-98-99");
     });
-    
+
     it("decodes", function() {
       expect(dom.decodeContentString("97-98-99")).toEqual("abc");
     });
@@ -233,12 +234,12 @@ describe("DomPredictionHelper", function() {
       expect(dom.decodeAllContentStrings("a:content(\"97\") blah:nth-child(6):content(\"97-98-99\") hello")).toEqual("a:content(\"a\") blah:nth-child(6):content(\"abc\") hello");
     });
   });
-  
+
   describe("content selector", function() {
     beforeEach(function() {
       jQuerySG("#jasmine-content").append(fixtures.class_name_tests);
     });
-    
+
     it("should be able to select based on complete content strings", function() {
       var selected = jQuerySG("span:content('Hello')");
       expect(selected.length).toEqual(1);
@@ -259,21 +260,21 @@ describe("DomPredictionHelper", function() {
       expect(dom.simplifyCss("tr td", jQuerySG("table tr td, tr td"), jQuerySG([]))).toEqual("td");
       expect(dom.simplifyCss("strong > div", jQuerySG("div b strong div"), jQuerySG("div strong div#a b div"))).toEqual("strong > div");
       expect(dom.simplifyCss("tr td", jQuerySG("table tr td, tr td"), jQuerySG("tr"))).toEqual("td");
-      expect(dom.simplifyCss("#jobs > li:nth-child(3)", 
-                             jQuerySG('#jobs>li:nth-child(3)'), 
+      expect(dom.simplifyCss("#jobs > li:nth-child(3)",
+                             jQuerySG('#jobs>li:nth-child(3)'),
                              jQuerySG('#jobs ul li:nth-child(3)'))).toEqual("#jobs > li");
-      expect(dom.simplifyCss("div+ ul#jobs > li:nth-child(3)", 
-                             jQuerySG('#jobs>li:nth-child(3)'), 
+      expect(dom.simplifyCss("div+ ul#jobs > li:nth-child(3)",
+                             jQuerySG('#jobs>li:nth-child(3)'),
                              jQuerySG('#jobs ul li:nth-child(3)'))).toEqual("#jobs > li");
     });
 
     it("should work with numerical ids", function() {
       expect(dom.simplifyCss("table.reasonable>tr>td#omg-im-ugly-7777777",
-                             jQuerySG('#omg-im-ugly-7777777'), 
+                             jQuerySG('#omg-im-ugly-7777777'),
                              jQuerySG('#something_else td'))).toEqual(".reasonable td");
     });
   });
-  
+
   describe("positionOfSpaceBeforeIndexOrLineStart", function() {
     it("should return the position of the space before index or line start", function() {
       expect(dom.positionOfSpaceBeforeIndexOrLineStart(3, ["a", "b", "c", "d"])).toEqual(0);
@@ -300,9 +301,9 @@ describe("DomPredictionHelper", function() {
       expect(dom.predictCss(jQuerySG('#sibling_test h3 + span'), jQuerySG('#sibling_test h4 + span'))).toEqual('.a+ span');
       expect(dom.predictCss(jQuerySG('#sibling_test h3.a + span'), jQuerySG('#sibling_test h4 + span'))).toEqual('.a+ span');
     });
-    
+
     it("works on content", function() {
-      expect(dom.predictCss(jQuerySG('span.wrap:content("Manager, Strategic Systems")'), 
+      expect(dom.predictCss(jQuerySG('span.wrap:content("Manager, Strategic Systems")'),
                             jQuerySG('span.wrap:content("El Segundo, CA (Los Angeles)")'))).toEqual(':content("Job Title:")+ .wrap');
     });
   });
@@ -324,7 +325,7 @@ describe("DomPredictionHelper", function() {
       expect(dom.selectorGets('none', jQuerySG('table, #something_else td div#a'), 'table')).toEqual(false);
     });
   });
-  
+
   describe("wouldLeaveFreeFloatingNthChild", function() {
     it("determines if a floating nthchild would be left by the removal of the specified element", function() {
       expect(dom.wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)", " ", "div"], 0)).toBeTruthy();
@@ -349,8 +350,8 @@ describe("DomPredictionHelper", function() {
       expect(dom.wouldLeaveFreeFloatingNthChild(["div", " ", "#a", ":nth-child(0)"], 2)).toBeTruthy();
       expect(dom.wouldLeaveFreeFloatingNthChild([":content(\"23\")", ":nth-child(0)"], 0)).toBeTruthy();
 
-      expect(dom.wouldLeaveFreeFloatingNthChild([":nth-child(2)", " ", ":nth-child(2)", " ", ":nth-child(2)", " ", 
-                                                     ":nth-child(1)", " ", ":nth-child(1)", " ", "#today", ":nth-child(1)", 
+      expect(dom.wouldLeaveFreeFloatingNthChild([":nth-child(2)", " ", ":nth-child(2)", " ", ":nth-child(2)", " ",
+                                                     ":nth-child(1)", " ", ":nth-child(1)", " ", "#today", ":nth-child(1)",
                                                      " ", "#todaybd", ":nth-child(3)"], 10)).toBeTruthy();
 
       expect(dom.wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)"], 0)).toBeTruthy();
@@ -362,7 +363,7 @@ describe("DomPredictionHelper", function() {
       expect(dom.wouldLeaveFreeFloatingNthChild([":nth-child(0)"], 0)).toBeFalsy();
     });
   });
-  
+
   describe("_removeElements", function() {
     it("removes matching elements", function() {
       expect(dom._removeElements(0, ["a", "b", "c"], "a", function() { return true;} )).toEqual(["", "b", "c"]);
@@ -399,7 +400,7 @@ describe("DomPredictionHelper", function() {
     }
 
     it("converts css to xpath", function() {
-      var expressions = ['a', '#leaf1', 'body #leaf1', 'span.sibling.something.else', 'a , b , #leaf1', 
+      var expressions = ['a', '#leaf1', 'body #leaf1', 'span.sibling.something.else', 'a , b , #leaf1',
                          'span.sibling', '.else.something', ':nth-child(2) i#leaf1', 'span.something.else:nth-child(2) i#leaf1'];
 
       for (var i = 0; i < expressions.length; i++) {
