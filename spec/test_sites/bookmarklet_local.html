@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>SelectorGadget Bookmarklet</title>
+  </head>
+  <body>
+    <h1>SelectorGadget Bookmarklet</h1>
+    <div style="font-size:1.5em">
+      Drag this link to your bookmark bar: <a href="javascript:(function(){var%20s=document.createElement('div');s.innerHTML='Loading...';s.style.color='black';s.style.padding='20px';s.style.position='fixed';s.style.zIndex='9999';s.style.fontSize='3.0em';s.style.border='2px%20solid%20black';s.style.right='40px';s.style.top='40px';s.setAttribute('class','selector_gadget_loading');s.style.background='white';document.body.appendChild(s);s=document.createElement('script');s.setAttribute('type','text/javascript');s.setAttribute('src','../../../lib/selectorgadget_local.js' + '?r=' + (new Date()).getTime());document.body.appendChild(s);})();">SelectorGadget Local</a>
+    </div>
+    <div>
+      Note: this will only work on sites in sites/.<br />
+      Note: this may not work on sites that use &lt;base href='...' /&gt; tags.
+    </div>
+  </body>
+</html>
