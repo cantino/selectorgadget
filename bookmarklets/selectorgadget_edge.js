@@ -36,7 +36,7 @@ function wait_for_script_load(look_for, callback) {
 }
 
 (function(){
-  importCSS('http://www.selectorgadget.com/unstable/lib/selectorgadget.css');
+  importCSS('http://www.selectorgadget.com/unstable/lib/selectorgadget.css.scss');
   importJS('http://www.selectorgadget.com/unstable/vendor/jquery.js', 'jQuery', function() { // Load everything else when it is done.
   	window.jQuerySG = jQuery.noConflict(true);
     importJS('http://www.selectorgadget.com/unstable/vendor/diff/diff_match_patch.js', 'diff_match_patch', function() {

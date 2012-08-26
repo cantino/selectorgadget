@@ -67,6 +67,7 @@ div#selectorgadget_main {
   background:white !important;
   text-align:left !important;
 }
+
 div#selectorgadget_main *, .selectorgadget_clean, .selectorgadget_clean * {
   azimuth: center;
   background-attachment: scroll;
@@ -131,11 +132,13 @@ div#selectorgadget_main *, .selectorgadget_clean, .selectorgadget_clean * {
   background:white;
   text-align:left;  
 }
+
 .selectorgadget_clean a {
 	color: blue;
 	text-decoration: underline;
 	cursor: pointer;
 }
+
 div#selectorgadget_main .selectorgadget_input_field {
     display:block;
     float:left;
@@ -179,10 +182,12 @@ div#selectorgadget_main .selectorgadget_wizard #selectorgadget_path_field {
   background-color:#0F0 !important;
   background-image:none !important;
 }
+
 .selectorgadget_suggested {
   background-color:#FF5 !important;
   background-image:none !important;
 }
+
 .selectorgadget_border {
   position:absolute !important;
   z-index:999999 !important;
@@ -198,47 +203,61 @@ div#selectorgadget_main .selectorgadget_wizard #selectorgadget_path_field {
   vertical-align:baseline !important;
   text-align:left !important;
 }
+
 .selectorgadget_bottom_border {
   font-size:10px !important;
   padding:2px 0px 2px 5px !important;
 }
+
 .selectorgadget_border_red {
   background-color:#F00 !important;
 }
+
 .selectorgadget_highlighted {
 }
+
 .selectorgadget_rejected {
   background-color:#F00 !important;
   background-image:none !important;
 }
+
 img.selectorgadget_rejected {
   border:5px solid #F00 !important;
 }
+
 img.selectorgadget_suggested {
   border:5px solid #FF5 !important;
 }
+
 img.selectorgadget_selected {
   border:5px solid #0F0 !important;
 }
+
 #selectorgadget_main.selectorgadget_top {
   top:5px !important;
 }
+
 #selectorgadget_main.selectorgadget_bottom {
   bottom:5px !important;
 }
+
 #selectorgadget_main input {
   margin-right:10px !important;
   font-size:15px !important;
 }
+
 #selectorgadget_path_field {
   width:400px !important;
 }
+
 #selectorgadget_main .selectorgadget_new_line {
   clear: both;
 }
+
 #selectorgadget_main .selectorgadget_option {
   float: left;
 }
+
 #selectorgadget_main .selectorgadget_selected_option {
   text-decoration: underline;
 }

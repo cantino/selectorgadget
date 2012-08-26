@@ -38,7 +38,7 @@ function wait_for_script_load(look_for, callback) {
 
 var selector_gadget = null;
 (function(){
-  importCSS('../../../lib/selectorgadget.css');
+  importCSS('../../../lib/selectorgadget.css.scss');
   importJS('../../../vendor/jquery.js', 'jQuery', function() { // Load everything else when it is done.
   	window.jQuerySG = jQuery.noConflict(true);
     importJS('../../../vendor/diff/diff_match_patch.js', 'diff_match_patch', function() {
