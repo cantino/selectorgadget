@@ -40,7 +40,7 @@ function wait_for_script_load(look_for, callback) {
   importJS('http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js', 'jQuery', function() { // Load everything else when it is done.
     jQuery.noConflict();
     importJS('http://www.selectorgadget.com/stable/vendor/diff/diff_match_patch.js', 'diff_match_patch', function() {
-      importJS('http://www.selectorgadget.com/stable/lib/dom.js', 'DomPredictionHelper', function() {
+      importJS('http://www.selectorgadget.com/stable/lib/dom.js.coffee', 'DomPredictionHelper', function() {
         importJS('http://www.selectorgadget.com/stable/lib/interface.js');
       });
     });

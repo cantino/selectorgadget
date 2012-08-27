@@ -1,7 +1,7 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
-guard 'sprockets', :destination => 'build', :asset_paths => ['lib', 'vendor'], :minify => true do
+guard 'sprockets', :destination => 'build', :asset_paths => ['lib', 'vendor'] do #, :minify => true do
   watch (%r{^lib/js/.*}) { |m| "lib/js/selectorgadget.js" }
   watch (%r{^lib/css/.*}) { |m| "lib/css/selectorgadget.css.scss" }
 end
