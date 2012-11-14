@@ -11,6 +11,7 @@
       h1{
         padding:0;
         margin:0;
+        margin-bottom: 10px;
       }
       .container{
         background-color:#FFF;
@@ -45,22 +46,20 @@
     <div class="container">
       <h1>SelectorGadget: point and click CSS selectors</h1>
 
-      <div class='block' style='width:637px; margin: 2px auto; margin-top:10px'>
-        <object id='stUENdR0FIR1pbSFRYWltYUFJW' width='637' height='516' type='application/x-shockwave-flash' data='http://www.screentoaster.com/swf/STPlayer.swf'  codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,115,0'><param name='movie' value='http://www.screentoaster.com/swf/STPlayer.swf'/><param name='allowFullScreen' value='true'/><param name='allowScriptAccess' value='always'/><param name='flashvars' value='video=stUENdR0FIR1pbSFRYWltYUFJW'/></object>
-      </div>
+      <iframe src="http://player.vimeo.com/video/52055686?badge=0" width="700" height="637" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/52055686">SelectorGadget Screencast</a> from <a href="http://vimeo.com/user14268258">Andrew Cantino</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
 
       <div class='block'>
         SelectorGadget is an open source bookmarklet that makes <a href="http://www.w3.org/TR/CSS2/selector.html">CSS selector</a> generation and discovery on complicated sites a breeze. Just drag the bookmarklet to your bookmark bar, then go to any page and press it.  A box will open in the bottom right of the website.  Click on a page element that you would like your selector to match (it will turn green). SelectorGadget will then generate a minimal CSS selector for that element, and will highlight (yellow) everything that is matched by the selector. Now click on a highlighted element to remove it from the selector (red), or click on an unhighlighted element to add it to the selector. Through this process of selection and rejection, SelectorGadget helps you come up with the perfect CSS selector for your needs.
       </div>
       
       <div class='block'>
-        SelectorGadget has been tested to work in current versions of Firefox and Safari.  At the moment it is quite buggy in IE7.
+        SelectorGadget has been tested to work in current versions of Firefox, Chrome, and Safari.
       </div>
       
       <div class='block'>
         How could I use this?
         <ul>
-          <li>for webpage scraping with tools such as <a href="http://code.whytheluckystiff.net/hpricot/">Hpricot</a> and <a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a></li>
+          <li>for webpage scraping with tools such as <a href="http://nokogiri.org/">Nokogiri</a> and <a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a></li>
           <li>to generate <a href="http://jquery.com/">jQuery</a> selectors for dynamic sites</li>
           <li>as a tool to examine JavaScript-generated DOM structures</li>
           <li>as a tool to help you style only particular elements on the page with your stylesheets</li>
