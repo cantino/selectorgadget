@@ -2,7 +2,7 @@
 
 cd /tmp
 if [ -e tmp-sg ]; then
-  cd tmp-sg && git reset --hard && git clean -df && git checkout master && git pull origin master
+  cd tmp-sg && git reset --hard && git clean -df && git fetch && git checkout origin/master
 else
   git clone git@github.com:cantino/selectorgadget.git tmp-sg
   cd tmp-sg
