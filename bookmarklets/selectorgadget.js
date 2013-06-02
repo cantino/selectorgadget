@@ -36,12 +36,12 @@ function wait_for_script_load(look_for, callback) {
 }
 
 (function(){
-  importCSS('http://www.selectorgadget.com/stable/lib/selectorgadget.css.scss');
-  importJS('http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js', 'jQuery', function() { // Load everything else when it is done.
+  importCSS('https://dv0akt2986vzh.cloudfront.net/stable/lib/selectorgadget.css');
+  importJS('https://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js', 'jQuery', function() { // Load everything else when it is done.
     jQuery.noConflict();
-    importJS('http://www.selectorgadget.com/stable/vendor/diff/diff_match_patch.js', 'diff_match_patch', function() {
-      importJS('http://www.selectorgadget.com/stable/lib/dom.js.coffee', 'DomPredictionHelper', function() {
-        importJS('http://www.selectorgadget.com/stable/lib/interface.js');
+    importJS('https://dv0akt2986vzh.cloudfront.net/stable/vendor/diff/diff_match_patch.js', 'diff_match_patch', function() {
+      importJS('https://dv0akt2986vzh.cloudfront.net/stable/lib/dom.js', 'DomPredictionHelper', function() {
+        importJS('https://dv0akt2986vzh.cloudfront.net/stable/lib/interface.js');
       });
     });
   });
