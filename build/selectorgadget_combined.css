@@ -202,10 +202,8 @@ div#selectorgadget_main .selectorgadget_wizard #selectorgadget_path_field {
 
 img.selectorgadget_rejected {
   border: 5px solid #F00 !important; }
-
 img.selectorgadget_suggested {
   border: 5px solid #FF5 !important; }
-
 img.selectorgadget_selected {
   border: 5px solid #0F0 !important; }
 

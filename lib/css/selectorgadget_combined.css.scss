@@ -1,5 +1,5 @@
 div#selectorgadget_main {
-  azimuth: center !important;
+  azimuth: center !important; 
   background-attachment: scroll !important;
   background-image: none !important;
   background-position: 0% 0% !important;
@@ -221,16 +221,18 @@ div#selectorgadget_main .selectorgadget_wizard #selectorgadget_path_field {
   background-image:none !important;
 }
 
-img.selectorgadget_rejected {
-  border:5px solid #F00 !important;
-}
+img {
+  &.selectorgadget_rejected {
+    border:5px solid #F00 !important;
+  }
 
-img.selectorgadget_suggested {
-  border:5px solid #FF5 !important;
-}
+  &.selectorgadget_suggested {
+    border:5px solid #FF5 !important;
+  }
 
-img.selectorgadget_selected {
-  border:5px solid #0F0 !important;
+  &.selectorgadget_selected {
+    border:5px solid #0F0 !important;
+  }
 }
 
 #selectorgadget_main.selectorgadget_top {
