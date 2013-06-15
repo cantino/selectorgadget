@@ -1,3 +1,7 @@
+Release 0.6
+  - Re-written in CoffeeScript
+  - Built with guard
+  - Advanced "wizard flow" code added to repository
 Release 0.5
   - MIT license
   - New selector engine
