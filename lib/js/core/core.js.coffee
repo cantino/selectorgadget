@@ -339,10 +339,7 @@ window.SelectorGadget = class SelectorGadget
     @clear_button.attr('value', 'Clear') if @clear_button
   
   showHelp: ->
-    alert "(Better help coming soon!  Please visit http://selectorgadget.com!  Please report bugs!)\n\nClick on a page element that you would like your selector to match (it will turn green). SelectorGadget will then generate a minimal CSS selector for that element, and will highlight (yellow) everything that is matched by the selector. Now click on a highlighted element to remove it from the selector (red), or click on an unhighlighted element to add it to the selector. Through this process of selection and rejection, SelectorGadget helps you to come up with the perfect CSS selector for your needs.\n\nHolding 'shift' while moving the mouse will let you select elements inside of other selected ones."
-  
-  showOptions: ->
-    alert("hi!")
+    alert "Click on a page element that you would like your selector to match (it will turn green). SelectorGadget will then generate a minimal CSS selector for that element, and will highlight (yellow) everything that is matched by the selector. Now click on a highlighted element to reject it (red), or click on an unhighlighted element to add it (green). Through this process of selection and rejection, SelectorGadget helps you to come up with the perfect CSS selector for your needs.\n\nHolding 'shift' while moving the mouse will let you select elements inside of other selected elements."
   
   useRemoteInterface: ->
     window.sg_options && window.sg_options.remote_interface
@@ -404,14 +401,8 @@ window.SelectorGadget = class SelectorGadget
   
     @sg_div.append(jQuerySG('<input type="button" value="?"/>').bind("click", {'self': @}, @showHelp).addClass('selectorgadget_ignore').addClass('selectorgadget_input_field'))
   
-    @sg_div.append(jQuerySG('<input type="button" value="Options"/>').bind("click", {'self': @}, @showOptions).addClass('selectorgadget_ignore').addClass('selectorgadget_input_field'))
-  
     @sg_div.append(jQuerySG('<input type="button" value="X"/>').bind("click", {'self': @}, @unbindAndRemoveInterface).addClass('selectorgadget_ignore').addClass('selectorgadget_input_field'))
-  
-    # this.sg_div.append(
-    #   jQuerySG('<span class="selectorgadget_ignore selectorgadget_option selectorgadget_new_line">Show XPath</span>').bind("click", {'self': this}, this.showXPath)
-    # );
-  
+
     @path_output_field = path.get(0)
   
   removeInterface: (e) ->
