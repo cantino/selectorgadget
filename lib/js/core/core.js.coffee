@@ -436,6 +436,20 @@ window.SelectorGadget = class SelectorGadget
   randBetween: (a, b) ->
     Math.floor(Math.random() * b) + a
   
+  @toggle: (options) ->
+    if !window.selector_gadget
+      window.selector_gadget = new SelectorGadget()
+      window.selector_gadget.makeInterface()
+      window.selector_gadget.clearEverything()
+      window.selector_gadget.setMode('interactive')
+      window.selector_gadget.analytics() unless options?.analytics == false
+    else if window.selector_gadget.unbound
+      window.selector_gadget.rebindAndMakeInterface()
+    else
+      window.selector_gadget.unbindAndRemoveInterface()
+
+    jQuerySG('.selector_gadget_loading').remove()
+  
   analytics: ->
     # http://www.vdgraaf.info/google-analytics-without-javascript.html
     utmac = 'UA-148948-9'

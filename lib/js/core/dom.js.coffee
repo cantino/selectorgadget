@@ -239,7 +239,6 @@ window.DomPredictionHelper = class DomPredictionHelper
     priorities = @tokenPriorities(parts)
     ordering = @orderFromPriorities(priorities)
     selector = @decodeAllContentStrings(@cleanCss(css))
-    console.log(selector) if window.console
     look_back_index = -1
     best_so_far = ""
     best_so_far = selector if @selectorGets('all', selected, selector) && @selectorGets('none', rejected, selector)
@@ -256,10 +255,8 @@ window.DomPredictionHelper = class DomPredictionHelper
         continue if @wouldLeaveFreeFloatingNthChild(parts, part)
 
         @_removeElements part, parts, first, (selector) =>
-          console.log("trying: " + selector) if window.console
           if @selectorGets('all', selected, selector) && @selectorGets('none', rejected, selector) &&
              (selector.length < best_so_far.length || best_so_far.length == 0)
-            console.log("kept: " + selector) if window.console
             best_so_far = selector
             got_shorter = true
             true
