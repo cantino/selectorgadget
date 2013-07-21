@@ -10,6 +10,61 @@ Please visit [http://www.selectorgadget.com](http://www.selectorgadget.com) to t
 * jQuery
 * [diff-match-patch](https://code.google.com/p/google-diff-match-patch/)
 
+# Features
+
+## Remote interface
+
+SelectorGadget can be extended for use in custom workflows with a remote 
+interface that replaces the standard display and controls.
+
+To define a remote interface, create a JavaScript file with any functionality 
+you need, and append any relevant controls to SelectorGadget's UI container. 
+Here's a simple example:
+
+```javascript
+// sg_interface.js
+
+var SG = window.selector_gadget
+
+// Add field to display current selection
+var path = jQuerySG('<input>', { id: 'sg-status', class: 'selectorgadget_ignore' })
+SG.sg_div.append(path)
+SG.path_output_field = path.get(0)
+
+// Add button to dismiss SelectorGadget
+var btnOk = $('<button>', { id: 'sg-ok', class: 'selectorgadget_ignore' }).text('OK')
+SG.sg_div.append(btnOk)
+$(btnOk).bind('click', function(event) {
+  jQuerySG(SG).unbind()
+  jQuerySG(SG.sg_div).unbind()
+  SG.unbindAndRemoveInterface()
+  SG = null
+})
+
+// Watch the input field for changes
+var val = saved = path.val()
+var tid = setInterval(function() {
+  val = path.val()
+  if(saved != val) {
+    console.log('New path', val, 'matching', (jQuerySG(val).length), 'element(s)')
+    saved = val
+  }
+}, 50)
+```
+
+Set the path to the remote interface in SelectorGadget's sg_options object 
+prior to instantiation, like this:
+
+```javascript
+window.sg_options = {
+  remote_interface: '/path/to/sg_interface.js'
+}
+
+window.selector_gadget = new SelectorGadget()
+// ...
+
+```
+
 # Local Development
 
 ## Compiling
