@@ -1,9 +1,11 @@
 {
-  // "icons": { "16": "icons/16x16.png",
-  //            "48": "icons/48x48.png",
-  //           "128": "icons/128x128.png" },
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "icons": { "16": "icons/16x16.png",
+             "48": "icons/48x48.png",
+            "128": "icons/128x128.png" },
   "name": "SelectorGadget",
-  "description": "Easy, powerful CSS selector generation.",
+  "description": "Easy, powerful CSS Selector generation.",
   "version": "0.1",
   "permissions": [
     "tabs", "http://*/*", "https://*/*"
@@ -13,8 +15,10 @@
     "persistent": false
   },
   "browser_action": {
-    // "default_icon": "icon.png",
+    "default_icon": {
+      "19": "icons/action19x19.png",
+      "38": "icons/action38x38.png"
+    },
     "default_title": "SelectorGadget"
-  },
-  "manifest_version": 2
+  }
 }
