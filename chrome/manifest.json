@@ -5,6 +5,7 @@
              "48": "icons/48x48.png",
             "128": "icons/128x128.png" },
   "name": "SelectorGadget",
+  "homepage_url": "http://selectorgadget.com",
   "description": "Easy, powerful CSS Selector generation.",
   "version": "0.1",
   "permissions": [
