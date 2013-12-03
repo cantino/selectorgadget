@@ -86,3 +86,7 @@ SelectorGadget is tested with [http://pivotal.github.com/jasmine/](jasmine).  Wi
 open _spec/SpecRunner.html_ in your browser to run the tests.  (On a Mac, just do `open spec/SpecRunner.html`)
 
 To manually test during local development, `open spec/test_sites/bookmarklet_local.html` and use that local bookmarklet on the contents of _spec/test\_sites_.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/cantino/selectorgadget/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
