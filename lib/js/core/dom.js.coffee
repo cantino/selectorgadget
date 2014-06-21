@@ -93,7 +93,7 @@ window.DomPredictionHelper = class DomPredictionHelper
     if includeContents && jQuerySG(node).contents().length < 5 # Not too many children.
       text = jQuerySG.trim(jQuerySG(node).text().replace(/\s+/g, ' '))
       if text.length < 35 && text.length > 4 && text.indexOf("\"") == -1
-        path += ":content(\"" + this.encodeContentString(text) + "\")"
+        path += ":contains(\"" + this.encodeContentString(text) + "\")"
 
     if node.nodeName.toLowerCase() != "body" # nth-child needs to be last.
       path += ':nth-child(' + (@childElemNumber(node) + 1) + ')'
@@ -115,8 +115,8 @@ window.DomPredictionHelper = class DomPredictionHelper
     out
 
   decodeAllContentStrings: (str) ->
-    str.replace /:content\(\"([\d\-]+)\"\)/gi, (s, substr) =>
-      ":content(\"" + @decodeContentString(substr) + "\")"
+    str.replace /:contains\(\"([\d\-]+)\"\)/gi, (s, substr) =>
+      ":contains(\"" + @decodeContentString(substr) + "\")"
 
   cssDiff: (array) ->
     try
@@ -203,7 +203,7 @@ window.DomPredictionHelper = class DomPredictionHelper
       second = token.substring(1, 2)
       if first == ':' && second == 'n' # :nth-child
         priorities[i] = 0
-      else if first == ':' && second == 'c' # :content
+      else if first == ':' && second == 'c' # :contains
         priorities[i] = 1
       else if first == '>' # >
         priorities[i] = 2;
@@ -306,7 +306,7 @@ window.DomPredictionHelper = class DomPredictionHelper
 
     space_is_on_left && nth_child_is_on_right
 
-  # Not intended for user CSS, does destructive sibling removal.  Expects strings to be escaped, such as in :content.
+  # Not intended for user CSS, does destructive sibling removal.  Expects strings to be escaped, such as in :contains.
   cleanCss: (css) ->
     cleaned_css = css
     last_cleaned_css = null
