@@ -1,5 +1,5 @@
 div#selectorgadget_main {
-  azimuth: center !important; 
+  azimuth: center !important;
   background-attachment: scroll !important;
   background-image: none !important;
   background-position: 0% 0% !important;
@@ -130,7 +130,7 @@ div#selectorgadget_main *, .selectorgadget_clean, .selectorgadget_clean * {
   float:none;
   font-style:none;
   background:white;
-  text-align:left;  
+  text-align:left;
 }
 
 .selectorgadget_clean a {
@@ -262,4 +262,8 @@ img {
 
 #selectorgadget_main .selectorgadget_selected_option {
   text-decoration: underline;
+}
+
+.tr-selecter {
+  background-color: #0F0 !important;
 }

@@ -1,29 +1,7 @@
-###
- The MIT License
+DomPredictionHelper = require './dom.coffee'
+window.jQuerySG = require './init.coffee'
 
- Copyright (c) 2012 Andrew Cantino
- Copyright (c) 2009 Andrew Cantino & Kyle Maxwell
-
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- THE SOFTWARE.
-###
-
-window.SelectorGadget = class SelectorGadget
+module.exports = class SelectorGadget
   border_width: 5
   border_padding: 2
   b_top: null
@@ -388,8 +366,12 @@ window.SelectorGadget = class SelectorGadget
         self.refreshFromPath(e)
     ).focus(-> jQuerySG(this).select())
     @sg_div.append(path);
-    @clear_button = jQuerySG('<input type="button" value="Clear"/>').bind("click", {'self': @}, @clearEverything).addClass('selectorgadget_ignore').addClass('selectorgadget_input_field')
+    @clear_button = jQuerySG('<input type="button" value="Clear"/>').bind("click", {'self': @}, @clearEverything)
+      .addClass('selectorgadget_ignore')
+      .addClass('selectorgadget_input_field')
+    
     @sg_div.append(this.clear_button)
+    
     @sg_div.append(jQuerySG('<input type="button" value="Toggle Position"/>').click( ->
       if self.sg_div.hasClass('selectorgadget_top')
         self.sg_div.removeClass('selectorgadget_top').addClass('selectorgadget_bottom')
@@ -397,13 +379,9 @@ window.SelectorGadget = class SelectorGadget
         self.sg_div.removeClass('selectorgadget_bottom').addClass('selectorgadget_top')
     ).addClass('selectorgadget_ignore').addClass('selectorgadget_input_field'))
 
-    @sg_div.append(jQuerySG('<input type="button" value="Go"/>')
-      .bind("click", {'self': @}, @go)
-      .addClass('selectorgadget_ignore')
-      .addClass('selectorgadget_input_field'))
-    # @sg_div.append(jQuerySG('<input type="button" value="XPath"/>').bind("click", {'self': @}, @showXPath).addClass('selectorgadget_ignore').addClass('selectorgadget_input_field'))
-    # @sg_div.append(jQuerySG('<input type="button" value="?"/>').bind("click", {'self': @}, @showHelp).addClass('selectorgadget_ignore').addClass('selectorgadget_input_field'))
-    # @sg_div.append(jQuerySG('<input type="button" value="X"/>').bind("click", {'self': @}, @unbindAndRemoveInterface).addClass('selectorgadget_ignore').addClass('selectorgadget_input_field'))
+    @sg_div.append(jQuerySG('<input type="button" value="XPath"/>').bind("click", {'self': @}, @showXPath).addClass('selectorgadget_ignore').addClass('selectorgadget_input_field'))
+    @sg_div.append(jQuerySG('<input type="button" value="?"/>').bind("click", {'self': @}, @showHelp).addClass('selectorgadget_ignore').addClass('selectorgadget_input_field'))
+    @sg_div.append(jQuerySG('<input type="button" value="X"/>').bind("click", {'self': @}, @unbindAndRemoveInterface).addClass('selectorgadget_ignore').addClass('selectorgadget_input_field'))
 
     @path_output_field = path.get(0)
 
@@ -451,17 +429,3 @@ window.SelectorGadget = class SelectorGadget
       window.selector_gadget.unbindAndRemoveInterface()
 
     jQuerySG('.selector_gadget_loading').remove()
-
-  go: (e) ->
-    self = (e && e.data && e.data.self) || @
-    path = self.path_output_field.value
-
-    return if path == 'No valid path found.'
-    # prompt "The CSS selector '#{path}' as an XPath is shown below.  Please report any bugs that you find with this converter.",
-    #       self.prediction_helper.cssToXPath(path)
-    channel = Channel
-    
-    elem = this
-    w_elem = jQuerySG(document)
-    w_elem.trigger('ready.sg', {'path': path})
-    alert "Go..!"
