@@ -2,3 +2,4 @@
 .DS_Store
 extension.zip
 bower_components
+node_modules
