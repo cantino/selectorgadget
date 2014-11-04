@@ -228,3 +228,6 @@ img.selectorgadget_selected {
 
 #selectorgadget_main .selectorgadget_selected_option {
   text-decoration: underline; }
+
+.tr-selecter {
+  background-color: #0F0 !important; }
