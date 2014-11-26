@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/jardix22/selectorgadget",
   "browser": {
-    "jquery": "./bower_components/jquery/dist/jquery.js",
     "diff_match_patch": "./bower_components/google-diff-match-patch-js/diff_match_patch_uncompressed.js"
   },
   "browserify": {
@@ -30,7 +29,6 @@
     ]
   },
   "browserify-shim": {
-    "jquery": "$",
     "diff_match_patch": "diff_match_patch"
   },
   "devDependencies": {
@@ -42,5 +40,9 @@
     "gulp-streamify": "^0.0.5",
     "vinyl-source-stream": "^1.0.0",
     "gulp-uglify": "^1.0.1"
+  },
+  "dependencies": {
+    "coffee-script": "^1.8.0",
+    "jquery": "~2.1.0"
   }
 }

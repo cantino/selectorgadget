@@ -14,7 +14,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.0",
     "google-diff-match-patch-js": "~1.0.0"
   }
 }
