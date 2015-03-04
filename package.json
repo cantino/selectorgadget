@@ -25,6 +25,9 @@
       ".coffee"
     ]
   },
+  "browserify-shim": {
+    "diff_match_patch": "google-diff-match-patch-js"
+  },
   "devDependencies": {
     "browserify-shim": "^3.8.0",
     "browserify": "^6.2.0",
