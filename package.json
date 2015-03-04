@@ -16,9 +16,6 @@
     "url": "https://github.com/jardix22/selectorgadget/issues"
   },
   "homepage": "https://github.com/jardix22/selectorgadget",
-  "browser": {
-    "diff_match_patch": "./bower_components/google-diff-match-patch-js/diff_match_patch_uncompressed.js"
-  },
   "browserify": {
     "transform": [
       "browserify-shim",
@@ -29,7 +26,7 @@
     ]
   },
   "browserify-shim": {
-    "diff_match_patch": "diff_match_patch"
+    "diff_match_patch": "google-diff-match-patch-js"
   },
   "devDependencies": {
     "browserify-shim": "^3.8.0",
@@ -43,6 +40,7 @@
   },
   "dependencies": {
     "coffee-script": "^1.8.0",
-    "jquery": "~2.1.0"
+    "jquery": "~2.1.0",
+    "google-diff-match-patch-js": "TallerWebSolutions/google-diff-match-patch-js#master"
   }
 }
