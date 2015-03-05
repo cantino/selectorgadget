@@ -1,4 +1,4 @@
-diff_match_patch = require "google-diff-match-patch-js"
+diff_match_patch = (require "google-diff-match-patch-js").diff_match_patch
 
 module.exports = class DomPredictionHelper
   recursiveNodes: (e) ->
