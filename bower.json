@@ -1,0 +1,19 @@
+{
+  "name": "selectorgadget",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jardix22/selectorgadget",
+  "authors": [
+    "Joseph Ramos <joseph.ramos@taller.net.br>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "google-diff-match-patch-js": "~1.0.0"
+  }
+}

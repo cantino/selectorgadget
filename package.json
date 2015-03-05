@@ -1,0 +1,50 @@
+{
+  "name": "selectorgadget",
+  "title": "SelectorGadget",
+  "version": "1.0.0",
+  "description": "[SelectorGadget](http://www.selectorgadget.com) is an open source bookmarklet that makes CSS selector generation and discovery on complicated sites a breeze.",
+  "main": "./lib/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jardix22/selectorgadget.git"
+  },
+  "author": "Joseph Ramos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jardix22/selectorgadget/issues"
+  },
+  "homepage": "https://github.com/jardix22/selectorgadget",
+  "browserify": {
+    "transform": [
+      "coffeeify"
+    ],
+    "extension": [
+      ".coffee"
+    ]
+  },
+  "devDependencies": {
+    "browserify": "^6.2.0",
+    "coffeeify": "^0.7.0",
+    "gulp": "^3.8.10",
+    "gulp-bump": "^0.2.2",
+    "gulp-concat": "^2.5.2",
+    "gulp-filter": "^2.0.2",
+    "gulp-git": "^1.0.1",
+    "gulp-header": "^1.2.2",
+    "gulp-minify-css": "^0.5.1",
+    "gulp-streamify": "^0.0.5",
+    "gulp-tag-version": "^1.2.1",
+    "gulp-uglify": "^1.0.1",
+    "run-sequence": "^1.0.2",
+    "vinyl-source-stream": "^1.0.0",
+    "vinyl-transform": "^1.0.0"
+  },
+  "dependencies": {
+    "coffee-script": "1.x.x",
+    "jquery": "1.x.x",
+    "google-diff-match-patch-js": "TallerWebSolutions/google-diff-match-patch-js#master"
+  }
+}

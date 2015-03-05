@@ -53,18 +53,20 @@ div#selectorgadget_main {
   widows: 2 !important;
   width: auto !important;
   word-spacing: normal !important;
-  position: fixed !important;
-  z-index: 9999999 !important;
-  display: block !important;
-  right: 5px !important;
-  margin: 5px !important;
-  padding: 5px !important;
-  font-size: 14px !important;
-  float: none !important;
-  border: 1px solid black !important;
-  font-style: none !important;
-  background: white !important;
-  text-align: left !important; }
+
+  position:fixed !important;
+  z-index:9999999 !important;
+  display:block !important;
+  right:5px !important;
+  margin:5px !important;
+  padding:5px !important;
+  font-size:14px !important;
+  float:none !important;
+  border:1px solid black !important;
+  font-style:normal !important;
+  background:white !important;
+  text-align:left !important;
+}
 
 div#selectorgadget_main *, .selectorgadget_clean, .selectorgadget_clean * {
   azimuth: center;
@@ -121,110 +123,145 @@ div#selectorgadget_main *, .selectorgadget_clean, .selectorgadget_clean * {
   widows: 2;
   width: auto;
   word-spacing: normal;
-  right: 0px;
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  float: none;
-  font-style: none;
-  background: white;
-  text-align: left; }
+  right:0px;
+  margin:0;
+  padding:0;
+  font-size:14px;
+  float:none;
+  font-style:normal;
+  background:white;
+  text-align:left;
+}
 
 .selectorgadget_clean a {
-  color: blue;
-  text-decoration: underline;
-  cursor: pointer; }
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
 
 div#selectorgadget_main .selectorgadget_input_field {
-  display: block;
-  float: left;
-  margin: 0 7px 0 0;
-  background-color: #f5f5f5;
-  border: 1px solid #dedede;
-  border-top: 1px solid #eee;
-  border-left: 1px solid #eee;
-  font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
-  text-decoration: none;
-  color: #565656;
-  cursor: pointer;
-  padding: 5px 8px 6px 7px; }
+    display:block;
+    float:left;
+    margin:0 7px 0 0;
+    background-color:#f5f5f5;
+    border:1px solid #dedede;
+    border-top:1px solid #eee;
+    border-left:1px solid #eee;
+
+    font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+    text-decoration:none;
+    color:#565656;
+    cursor:pointer;
+    padding:5px 8px 6px 7px;
+}
+
+div#selectorgadget_main .selectorgadget_wizard {
+}
 
 div#selectorgadget_main .selectorgadget_wizard .selectorgadget_input_field {
   margin: 7px 3px 7px 3px;
   float: none;
-  display: inline; }
+  display: inline;
+}
 
 div#selectorgadget_main .selectorgadget_prompt {
   margin: 3px 0px 3px 0px;
-  font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+  font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
   font-weight: bold;
-  float: none; }
+  float: none;
+}
 
 div#selectorgadget_main .selectorgadget_wizard #selectorgadget_path_field {
   margin: 5px 0px;
   clear: both;
   float: none;
-  display: block; }
+  display: block;
+}
 
 .selectorgadget_selected {
-  background-color: #0F0 !important;
-  background-image: none !important; }
+  background-color:#0F0 !important;
+  background-image:none !important;
+}
 
 .selectorgadget_suggested {
-  background-color: #FF5 !important;
-  background-image: none !important; }
+  background-color:#FF5 !important;
+  background-image:none !important;
+}
 
 .selectorgadget_border {
-  position: absolute !important;
-  z-index: 999999 !important;
-  background: white !important;
-  background-color: orange !important;
-  margin: 0px !important;
-  padding: 0px !important;
-  display: block !important;
-  float: none !important;
-  border: 0 !important;
-  font-style: none !important;
-  outline: 0 !important;
-  vertical-align: baseline !important;
-  text-align: left !important; }
+  position:absolute !important;
+  z-index:999999 !important;
+  background:white !important;
+  background-color:orange !important;
+  margin:0px !important;
+  padding:0px !important;
+  display:block !important;
+  float:none !important;
+  border:0 !important;
+  font-style:normal !important;
+  outline:0 !important;
+  vertical-align:baseline !important;
+  text-align:left !important;
+}
 
 .selectorgadget_bottom_border {
-  font-size: 10px !important;
-  padding: 2px 0px 2px 5px !important; }
+  font-size:10px !important;
+  padding:2px 0px 2px 5px !important;
+}
 
 .selectorgadget_border_red {
-  background-color: #F00 !important; }
+  background-color:#F00 !important;
+}
+
+.selectorgadget_highlighted {
+}
 
 .selectorgadget_rejected {
-  background-color: #F00 !important;
-  background-image: none !important; }
+  background-color:#F00 !important;
+  background-image:none !important;
+}
 
 img.selectorgadget_rejected {
-  border: 5px solid #F00 !important; }
+  border:5px solid #F00 !important;
+}
+
 img.selectorgadget_suggested {
-  border: 5px solid #FF5 !important; }
+  border:5px solid #FF5 !important;
+}
+
 img.selectorgadget_selected {
-  border: 5px solid #0F0 !important; }
+  border:5px solid #0F0 !important;
+}
 
 #selectorgadget_main.selectorgadget_top {
-  top: 5px !important; }
+  top:5px !important;
+}
 
 #selectorgadget_main.selectorgadget_bottom {
-  bottom: 5px !important; }
+  bottom:5px !important;
+}
 
 #selectorgadget_main input {
-  margin-right: 10px !important;
-  font-size: 15px !important; }
+  margin-right:10px !important;
+  font-size:15px !important;
+}
 
 #selectorgadget_path_field {
-  width: 400px !important; }
+  width:400px !important;
+}
 
 #selectorgadget_main .selectorgadget_new_line {
-  clear: both; }
+  clear: both;
+}
 
 #selectorgadget_main .selectorgadget_option {
-  float: left; }
+  float: left;
+}
 
 #selectorgadget_main .selectorgadget_selected_option {
-  text-decoration: underline; }
+  text-decoration: underline;
+}
+
+.tr-selecter {
+  background-color: #0F0 !important;
+}
