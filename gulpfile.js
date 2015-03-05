@@ -1,23 +1,61 @@
-var gulp = require('gulp');
-var browserify = require('browserify');
-var source = require('vinyl-source-stream');
-var uglify = require('gulp-uglify');
-var streamify = require('gulp-streamify');
-var sass = require('gulp-sass');
+/**
+ * Building scripts.
+ */
 
-gulp.task('scripts', function() {
-  return browserify('./lib/js/main')
-    .bundle()
-    .pipe(source('selectorgadget_combined.js'))
-    .pipe(streamify(uglify()))
-    .pipe(gulp.dest('./build'));
+var fs          = require('fs')
+  , gulp        = require('gulp')
+  , browserify  = require('browserify')
+  , transform   = require('vinyl-transform')
+  , source      = require('vinyl-source-stream')
+  , concat      = require('gulp-concat')
+  , uglify      = require('gulp-uglify')
+  , minify      = require('gulp-minify-css')
+  , streamify   = require('gulp-streamify')
+  , header      = require('gulp-header')
+  , pkg         = require('./package.json')
+  , signature   = fs.readFileSync('./signature');
+
+/**
+ * Get signature header.
+ */
+function signatureHeader() {
+  return header(signature, {
+    pkg: pkg
+  });
+}
+
+/**
+ * Build a distribute bundler for SelectorGadget.
+ */
+gulp.task('script', function() {
+  var browserified = transform(function(filename) {
+    return browserify(filename).bundle();
+  });
+
+  return gulp.src(['./lib/js/main.js'])
+    .pipe(browserified)
+    .pipe(concat(pkg.name + '.js'))
+    .pipe(signatureHeader())
+    .pipe(gulp.dest('./dist'))
+    .pipe(uglify({ mangle: false }))
+    .pipe(signatureHeader())
+    .pipe(concat(pkg.name + '.min.js'))
+    .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('sass', function () {
-    gulp.src('./lib/css/*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('./build'));
+/**
+ * Build a distribute CSS.
+ */
+gulp.task('css', function () {
+  gulp.src('./lib/css/*.css')
+    .pipe(concat(pkg.name + '.css'))
+    .pipe(signatureHeader())
+    .pipe(gulp.dest('./dist'))
+    .pipe(minify())
+    .pipe(signatureHeader())
+    .pipe(concat(pkg.name + '.min.css'))
+    .pipe(gulp.dest('./dist'));
 });
 
-// Default Task
-gulp.task('default', ['sass', 'scripts']);
+gulp.task('build', ['css', 'script']);
+gulp.task('default', ['build']);
