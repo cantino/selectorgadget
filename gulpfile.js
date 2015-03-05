@@ -12,12 +12,14 @@ var fs          = require('fs')
   , minify      = require('gulp-minify-css')
   , streamify   = require('gulp-streamify')
   , header      = require('gulp-header')
+  , ignore      = require('gulp-ignore')
   , git         = require('gulp-git')
   , bump        = require('gulp-bump')
   , filter      = require('gulp-filter')
-  , tag_version = require('gulp-tag-version')
+  , tag         = require('gulp-tag-version')
   , pkg         = require('./package.json')
-  , signature   = fs.readFileSync('./signature');
+  , signature   = fs.readFileSync('./signature')
+  , gitignore   = fs.existsSync('.gitignore') ? fs.readFileSync('.gitignore') + '' : '';
 
 /**
  * Get signature header.
@@ -74,25 +76,45 @@ gulp.task('css', function () {
  * To bump the version numbers accordingly after you did a patch,
  * introduced a feature or made a backwards-incompatible release.
  */
-function inc(importance) {
+function bumper(importance) {
   // get all the files to bump version in 
   return gulp.src(['./package.json', './bower.json'])
     // bump the version number in those files 
     .pipe(bump({type: importance}))
-    // save it back to filesystem 
-    .pipe(gulp.dest('./'))
-    // commit the changed version number 
-    .pipe(git.commit('bumps package version'))
-    // read only one file to get the version number 
-    .pipe(filter('package.json'))
-    // **tag it in the repository** 
-    .pipe(tag_version());
+    // save it back to filesystem
+    .pipe(gulp.dest('./'));
 }
 
+gulp.task('release', function () {
+  var version = require('./package.json').version;
+
+  return gulp.src('./*')
+    .pipe(ignore.include(gitignore))
+    // Add all files.
+    .pipe(git.add({ args: '-u' }))
+    // Commit the changed version number.
+    .pipe(git.commit('Created release v' + version))
+    // Read only one file to get the version number.
+    // .pipe(filter('package.json'))
+    // Tag it to the repository. 
+    // .pipe(tag())
+});
+
+// Versioning tags.
+gulp.task('version:patch', bumper.bind(this, 'patch'));
+gulp.task('version:minor', bumper.bind(this, 'minor'));
+gulp.task('version:major', bumper.bind(this, 'major'));
+
+// Common alias.
+gulp.task('version', ['version:minor']);
+
 // Releasing tasks.
-gulp.task('patch',   ['build'], inc.bind(this, 'patch') });
-gulp.task('feature', ['build'], inc.bind(this, 'minor') });
-gulp.task('release', ['build'], inc.bind(this, 'major') });
+gulp.task('push:patch',   ['version:patch'], ['build'], ['release']);
+gulp.task('push:feature', ['version:minor'], ['build'], ['release']);
+gulp.task('push:release', ['version:major'], ['build'], ['release']);
+
+// Common alias.
+gulp.task('push', ['push:feature']);
 
 // Compilation tasks.
 gulp.task('build', ['css', 'script']);
