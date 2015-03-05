@@ -1,7 +1,7 @@
 /**
  * SelectorGadget - [SelectorGadget](http://www.selectorgadget.com) is an open source bookmarklet that makes CSS selector generation and discovery on complicated sites a breeze.
  * @name selectorgadget
- * @version v0.0.1
+ * @version v1.0.0
  * @link https://github.com/jardix22/selectorgadget
  * @license MIT
  */
