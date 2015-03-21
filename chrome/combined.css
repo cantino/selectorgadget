@@ -1,3 +1,4 @@
+/* line 1, lib/css/selectorgadget.css.scss */
 div#selectorgadget_main {
   azimuth: center !important;
   background-attachment: scroll !important;
@@ -66,6 +67,7 @@ div#selectorgadget_main {
   background: white !important;
   text-align: left !important; }
 
+/* line 71, lib/css/selectorgadget.css.scss */
 div#selectorgadget_main *, .selectorgadget_clean, .selectorgadget_clean * {
   azimuth: center;
   background-attachment: scroll;
@@ -130,11 +132,13 @@ div#selectorgadget_main *, .selectorgadget_clean, .selectorgadget_clean * {
   background: white;
   text-align: left; }
 
+/* line 136, lib/css/selectorgadget.css.scss */
 .selectorgadget_clean a {
   color: blue;
   text-decoration: underline;
   cursor: pointer; }
 
+/* line 142, lib/css/selectorgadget.css.scss */
 div#selectorgadget_main .selectorgadget_input_field {
   display: block;
   float: left;
@@ -149,31 +153,37 @@ div#selectorgadget_main .selectorgadget_input_field {
   cursor: pointer;
   padding: 5px 8px 6px 7px; }
 
+/* line 161, lib/css/selectorgadget.css.scss */
 div#selectorgadget_main .selectorgadget_wizard .selectorgadget_input_field {
   margin: 7px 3px 7px 3px;
   float: none;
   display: inline; }
 
+/* line 167, lib/css/selectorgadget.css.scss */
 div#selectorgadget_main .selectorgadget_prompt {
   margin: 3px 0px 3px 0px;
   font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
   font-weight: bold;
   float: none; }
 
+/* line 174, lib/css/selectorgadget.css.scss */
 div#selectorgadget_main .selectorgadget_wizard #selectorgadget_path_field {
   margin: 5px 0px;
   clear: both;
   float: none;
   display: block; }
 
+/* line 181, lib/css/selectorgadget.css.scss */
 .selectorgadget_selected {
   background-color: #0F0 !important;
   background-image: none !important; }
 
+/* line 186, lib/css/selectorgadget.css.scss */
 .selectorgadget_suggested {
   background-color: #FF5 !important;
   background-image: none !important; }
 
+/* line 191, lib/css/selectorgadget.css.scss */
 .selectorgadget_border {
   position: absolute !important;
   z-index: 999999 !important;
@@ -189,42 +199,55 @@ div#selectorgadget_main .selectorgadget_wizard #selectorgadget_path_field {
   vertical-align: baseline !important;
   text-align: left !important; }
 
+/* line 207, lib/css/selectorgadget.css.scss */
 .selectorgadget_bottom_border {
   font-size: 10px !important;
   padding: 2px 0px 2px 5px !important; }
 
+/* line 212, lib/css/selectorgadget.css.scss */
 .selectorgadget_border_red {
   background-color: #F00 !important; }
 
+/* line 219, lib/css/selectorgadget.css.scss */
 .selectorgadget_rejected {
   background-color: #F00 !important;
   background-image: none !important; }
 
+/* line 225, lib/css/selectorgadget.css.scss */
 img.selectorgadget_rejected {
   border: 5px solid #F00 !important; }
+/* line 229, lib/css/selectorgadget.css.scss */
 img.selectorgadget_suggested {
   border: 5px solid #FF5 !important; }
+/* line 233, lib/css/selectorgadget.css.scss */
 img.selectorgadget_selected {
   border: 5px solid #0F0 !important; }
 
+/* line 238, lib/css/selectorgadget.css.scss */
 #selectorgadget_main.selectorgadget_top {
   top: 5px !important; }
 
+/* line 242, lib/css/selectorgadget.css.scss */
 #selectorgadget_main.selectorgadget_bottom {
   bottom: 5px !important; }
 
+/* line 246, lib/css/selectorgadget.css.scss */
 #selectorgadget_main input {
   margin-right: 10px !important;
   font-size: 15px !important; }
 
+/* line 251, lib/css/selectorgadget.css.scss */
 #selectorgadget_path_field {
   width: 400px !important; }
 
+/* line 255, lib/css/selectorgadget.css.scss */
 #selectorgadget_main .selectorgadget_new_line {
   clear: both; }
 
+/* line 259, lib/css/selectorgadget.css.scss */
 #selectorgadget_main .selectorgadget_option {
   float: left; }
 
+/* line 263, lib/css/selectorgadget.css.scss */
 #selectorgadget_main .selectorgadget_selected_option {
   text-decoration: underline; }
