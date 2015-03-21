@@ -12,7 +12,7 @@ describe "SelectorGadget", ->
       expect(sg.composeRemoteUrl("http://www.blah.com", {blah: "hi"}).split("?")[1].split("&")[2].split("=")[1]).toEqual("hi")
 
     it "works with an existing query", ->
-  		url = "http://www.blah.com?a=b&c=d"
+      url = "http://www.blah.com?a=b&c=d"
       expect(sg.composeRemoteUrl(url).split("?")[0]).toEqual("http://www.blah.com")
       expect(sg.composeRemoteUrl(url).split("?")[1].split("&")[0].split("=")[0]).toEqual("a")
       expect(sg.composeRemoteUrl(url).split("?")[1].split("&")[0].split("=")[1]).toEqual("b")

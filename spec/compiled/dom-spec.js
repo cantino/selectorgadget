@@ -126,28 +126,6 @@
         return expect(dom.pathOf(jQuerySG('#parent1 .sibling.something.else').get(0)).indexOf("span#some_id.sibling:nth-child(1)+ span.sibling.something.else:nth-child(2)")).toBeGreaterThan(-1);
       });
     });
-    describe("content string encoding", function() {
-      it("does ascii encoding", function() {
-        return expect(dom.encodeContentString("abc")).toEqual("97-98-99");
-      });
-      it("decodes", function() {
-        return expect(dom.decodeContentString("97-98-99")).toEqual("abc");
-      });
-      return it("can encode and decode multiple content strings", function() {
-        return expect(dom.decodeAllContentStrings("a:content(\"97\") blah:nth-child(6):content(\"97-98-99\") hello")).toEqual("a:content(\"a\") blah:nth-child(6):content(\"abc\") hello");
-      });
-    });
-    describe("content selector", function() {
-      beforeEach(function() {
-        return jQuerySG("#jasmine-content").append(fixtures.class_name_tests);
-      });
-      return it("should be able to select based on complete content strings", function() {
-        var selected;
-        selected = jQuerySG("span:content('Hello')");
-        expect(selected.length).toEqual(1);
-        return expect("moo", selected.attr("id")).toEqual("moo");
-      });
-    });
     describe("simplifyCss", function() {
       beforeEach(function() {
         return jQuerySG("#jasmine-content").append(fixtures.big_structure);
@@ -178,7 +156,7 @@
       beforeEach(function() {
         return jQuerySG("#jasmine-content").append(fixtures.leaves).append(fixtures.big_structure);
       });
-      it("predicts css", function() {
+      return it("predicts css", function() {
         expect(dom.predictCss(jQuerySG('#parent1 span.sibling:nth-child(1), #parent1 span.sibling:nth-child(2)'), jQuerySG("dfdfdf"))).toEqual('.sibling');
         expect(jQuerySG('#jobs>li:nth-child(3)').length).toEqual(1);
         expect(jQuerySG('#jobs ul li:nth-child(3)').length).toEqual(1);
@@ -186,9 +164,6 @@
         expect('#leaf1', dom.predictCss(jQuerySG('#parent1 i'), jQuerySG('#parent1 b'))).toEqual('#leaf1');
         expect(dom.predictCss(jQuerySG('#sibling_test h3 + span'), jQuerySG('#sibling_test h4 + span'))).toEqual('.a+ span');
         return expect(dom.predictCss(jQuerySG('#sibling_test h3.a + span'), jQuerySG('#sibling_test h4 + span'))).toEqual('.a+ span');
-      });
-      return it("works on content", function() {
-        return expect(dom.predictCss(jQuerySG('span.wrap:content("Manager, Strategic Systems")'), jQuerySG('span.wrap:content("El Segundo, CA (Los Angeles)")'))).toEqual(':content("Job Title:")+ .wrap');
       });
     });
     describe("selectorGets", function() {
@@ -226,7 +201,6 @@
         expect(dom.wouldLeaveFreeFloatingNthChild([".a", ":nth-child(0)"], 0)).toBeTruthy();
         expect(dom.wouldLeaveFreeFloatingNthChild([" ", "#a", ":nth-child(0)"], 1)).toBeTruthy();
         expect(dom.wouldLeaveFreeFloatingNthChild(["div", " ", "#a", ":nth-child(0)"], 2)).toBeTruthy();
-        expect(dom.wouldLeaveFreeFloatingNthChild([":content(\"23\")", ":nth-child(0)"], 0)).toBeTruthy();
         expect(dom.wouldLeaveFreeFloatingNthChild([":nth-child(2)", " ", ":nth-child(2)", " ", ":nth-child(2)", " ", ":nth-child(1)", " ", ":nth-child(1)", " ", "#today", ":nth-child(1)", " ", "#todaybd", ":nth-child(3)"], 10)).toBeTruthy();
         expect(dom.wouldLeaveFreeFloatingNthChild(["a", ":nth-child(0)"], 0)).toBeTruthy();
         expect(dom.wouldLeaveFreeFloatingNthChild(["a", "", "", ":nth-child(0)"], 0)).toBeTruthy();

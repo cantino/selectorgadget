@@ -200,25 +200,6 @@ describe "DomPredictionHelper", ->
     it "should add siblings with pluses and tildes", ->
       expect(dom.pathOf(jQuerySG('#parent1 .sibling.something.else').get(0)).indexOf("span#some_id.sibling:nth-child(1)+ span.sibling.something.else:nth-child(2)")).toBeGreaterThan(-1)
 
-  describe "content string encoding", ->
-    it "does ascii encoding", ->
-      expect(dom.encodeContentString("abc")).toEqual("97-98-99")
-
-    it "decodes", ->
-      expect(dom.decodeContentString("97-98-99")).toEqual("abc")
-
-    it "can encode and decode multiple content strings", ->
-      expect(dom.decodeAllContentStrings("a:content(\"97\") blah:nth-child(6):content(\"97-98-99\") hello")).toEqual("a:content(\"a\") blah:nth-child(6):content(\"abc\") hello")
-
-  describe "content selector", ->
-    beforeEach ->
-      jQuerySG("#jasmine-content").append(fixtures.class_name_tests);
-
-    it "should be able to select based on complete content strings", ->
-      selected = jQuerySG("span:content('Hello')")
-      expect(selected.length).toEqual(1)
-      expect("moo", selected.attr("id")).toEqual("moo")
-
   describe "simplifyCss", ->
     beforeEach ->
       jQuerySG("#jasmine-content").append(fixtures.big_structure)
@@ -266,10 +247,6 @@ describe "DomPredictionHelper", ->
       expect(dom.predictCss(jQuerySG('#sibling_test h3 + span'), jQuerySG('#sibling_test h4 + span'))).toEqual('.a+ span')
       expect(dom.predictCss(jQuerySG('#sibling_test h3.a + span'), jQuerySG('#sibling_test h4 + span'))).toEqual('.a+ span')
 
-    it "works on content", ->
-      expect(dom.predictCss(jQuerySG('span.wrap:content("Manager, Strategic Systems")'),
-                            jQuerySG('span.wrap:content("El Segundo, CA (Los Angeles)")'))).toEqual(':content("Job Title:")+ .wrap')
-
   describe "selectorGets", ->
     beforeEach ->
       jQuerySG("#jasmine-content").append(fixtures.leaves).append(fixtures.big_structure)
@@ -307,7 +284,6 @@ describe "DomPredictionHelper", ->
       expect(dom.wouldLeaveFreeFloatingNthChild([".a", ":nth-child(0)"], 0)).toBeTruthy()
       expect(dom.wouldLeaveFreeFloatingNthChild([" ", "#a", ":nth-child(0)"], 1)).toBeTruthy()
       expect(dom.wouldLeaveFreeFloatingNthChild(["div", " ", "#a", ":nth-child(0)"], 2)).toBeTruthy()
-      expect(dom.wouldLeaveFreeFloatingNthChild([":content(\"23\")", ":nth-child(0)"], 0)).toBeTruthy()
 
       expect(dom.wouldLeaveFreeFloatingNthChild([":nth-child(2)", " ", ":nth-child(2)", " ", ":nth-child(2)", " ",
                                                      ":nth-child(1)", " ", ":nth-child(1)", " ", "#today", ":nth-child(1)",
