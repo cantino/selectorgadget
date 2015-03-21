@@ -74,12 +74,12 @@ window.DomPredictionHelper = class DomPredictionHelper
           while j < siblings.length
             break if siblings[j] == e
             if !siblings[j].nodeName.match(/^(script|#.*?)$/i)
-              path += @cssDescriptor(siblings[j], true) + (if j + 1 == siblings.length then "+ " else "~ ")
+              path += @cssDescriptor(siblings[j]) + (if j + 1 == siblings.length then "+ " else "~ ")
             j++
         path += @cssDescriptor(e) + " > "
     @cleanCss path
 
-  cssDescriptor: (node, includeContents) ->
+  cssDescriptor: (node) ->
     path = node.nodeName.toLowerCase()
     escaped = node.id && @escapeCssNames(new String(node.id))
     path += '#' + escaped if escaped && escaped.length > 0
@@ -90,33 +90,10 @@ window.DomPredictionHelper = class DomPredictionHelper
         if cssName && escaped.length > 0
           path += '.' + escaped
 
-    if includeContents && jQuerySG(node).contents().length < 5 # Not too many children.
-      text = jQuerySG.trim(jQuerySG(node).text().replace(/\s+/g, ' '))
-      if text.length < 35 && text.length > 4 && text.indexOf("\"") == -1
-        path += ":contains(\"" + this.encodeContentString(text) + "\")"
-
     if node.nodeName.toLowerCase() != "body" # nth-child needs to be last.
       path += ':nth-child(' + (@childElemNumber(node) + 1) + ')'
 
     path
-
-  encodeContentString: (str) ->
-    str = str.replace(/\"/, '\\"')
-    out = []
-    for i in [0...str.length]
-      out.push str.charCodeAt(i)
-    out.join('-')
-
-  decodeContentString: (str) ->
-    parts = str.split('-')
-    out = ""
-    for i in [0...parts.length]
-      out += String.fromCharCode(parseInt(parts[i]))
-    out
-
-  decodeAllContentStrings: (str) ->
-    str.replace /:contains\(\"([\d\-]+)\"\)/gi, (s, substr) =>
-      ":contains(\"" + @decodeContentString(substr) + "\")"
 
   cssDiff: (array) ->
     try
@@ -203,8 +180,6 @@ window.DomPredictionHelper = class DomPredictionHelper
       second = token.substring(1, 2)
       if first == ':' && second == 'n' # :nth-child
         priorities[i] = 0
-      else if first == ':' && second == 'c' # :contains
-        priorities[i] = 1
       else if first == '>' # >
         priorities[i] = 2;
       else if first == '+' || first == '~' # + and ~
@@ -238,7 +213,7 @@ window.DomPredictionHelper = class DomPredictionHelper
     parts = @tokenizeCss(css)
     priorities = @tokenPriorities(parts)
     ordering = @orderFromPriorities(priorities)
-    selector = @decodeAllContentStrings(@cleanCss(css))
+    selector = @cleanCss(css)
     look_back_index = -1
     best_so_far = ""
     best_so_far = selector if @selectorGets('all', selected, selector) && @selectorGets('none', rejected, selector)
@@ -275,7 +250,7 @@ window.DomPredictionHelper = class DomPredictionHelper
     for j in [look_back_index..part]
       parts[j] = '' # Clear it out.
 
-    selector = @decodeAllContentStrings(@cleanCss(parts.join('')))
+    selector = @cleanCss(parts.join(''))
 
     if selector == '' || !callback(selector)
       for j in [look_back_index..part]
@@ -306,7 +281,7 @@ window.DomPredictionHelper = class DomPredictionHelper
 
     space_is_on_left && nth_child_is_on_right
 
-  # Not intended for user CSS, does destructive sibling removal.  Expects strings to be escaped, such as in :contains.
+  # Not intended for user CSS, does destructive sibling removal.  Expects strings to be escaped.
   cleanCss: (css) ->
     cleaned_css = css
     last_cleaned_css = null
