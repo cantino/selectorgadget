@@ -1,13 +1,12 @@
 {
   "manifest_version": 2,
-  "version": "1.0.0",
   "icons": { "16": "icons/16x16.png",
              "48": "icons/48x48.png",
             "128": "icons/128x128.png" },
   "name": "SelectorGadget",
   "homepage_url": "http://selectorgadget.com",
   "description": "Easy, powerful CSS Selector generation.",
-  "version": "0.1",
+  "version": "1.1",
   "permissions": [
     "tabs", "http://*/*", "https://*/*"
   ],
