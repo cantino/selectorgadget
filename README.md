@@ -82,7 +82,7 @@ to watch and regenerate SelectorGadget's `.coffee` and `.scss` files.
 
 ## Testing
 
-SelectorGadget is tested with [http://pivotal.github.com/jasmine/](jasmine).  With guard running, 
+SelectorGadget is tested with [jasmine](http://github.com/jasmine/jasmine/).  With guard running, 
 open _spec/SpecRunner.html_ in your browser to run the tests.  (On a Mac, just do `open spec/SpecRunner.html`)
 
 To manually test during local development, `open spec/test_sites/bookmarklet_local.html` and use that local bookmarklet on the contents of _spec/test\_sites_.
