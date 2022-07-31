@@ -10,4 +10,4 @@ gem 'yui-compressor'
 gem 'guard-coffeescript', :require => false
 gem 'guard-sass', :require => false
 gem 'guard-shell', :require => false
-gem 'guard-concat', :git => 'https://github.com/mikz/guard-concat', :require => false
+gem 'guard-concat', :git => 'https://github.com/makevoid/guard-concat'

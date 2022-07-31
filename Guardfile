@@ -33,9 +33,9 @@ guard 'concat',
 guard :shell, :all_on_start => true do
   # Minify JS
   watch %r{build/selectorgadget_combined.js} do |m|
-    puts "Compressing #{m[0]}"
+    puts "Compressing build/selectorgadget_combined.js"
     File.open("build/selectorgadget_combined.min.js", 'w') do |file|
-      file.print Uglifier.compile(File.read(m[0]))
+      file.print Uglifier.compile(File.read('build/selectorgadget_combined.js'))
     end
   end
 end
