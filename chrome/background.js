@@ -1,4 +1,11 @@
-chrome.browserAction.onClicked.addListener(function(tab) {
-  chrome.tabs.insertCSS(tab.id, { file: "combined.css" });
-  chrome.tabs.executeScript(tab.id, { file: "combined.js" });
+chrome.action.onClicked.addListener(function (tab) {
+  chrome.scripting.executeScript({
+    target: {tabId: tab.id},
+    files: ['combined.js']
+  });
+
+  chrome.scripting.insertCSS({
+    target: {tabId: tab.id},
+    files: ['combined.css']
+  });
 });

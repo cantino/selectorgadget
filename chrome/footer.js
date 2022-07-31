@@ -5,7 +5,7 @@
   var interval = setInterval(function() {
     if (typeof SelectorGadget != 'undefined') {
       clearInterval(interval);
-      SelectorGadget.toggle();
+      SelectorGadget.toggle({ analytics: false });
     }
   }, 50);
 })();
