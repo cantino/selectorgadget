@@ -6,20 +6,20 @@ require 'yui/compressor'
 require 'fileutils'
 
 # Specs
-guard 'coffeescript', :input => 'spec', :output => 'spec/compiled', :all_on_start => true
+guard 'coffeescript', :input => 'spec', :output => 'spec/compiled', :patterns => [%r{^.+\.(?:coffee|coffee\.md|litcoffee)$}], :all_on_start => true
 
 # Core Code
 
 FileUtils.mkdir_p File.join(File.dirname(__FILE__), 'build', 'js')
 FileUtils.mkdir_p File.join(File.dirname(__FILE__), 'build', 'css')
 
-guard 'coffeescript', :input => 'lib/js',   :output => 'build/js',  :all_on_start => true
+guard 'coffeescript', :input => 'lib/js',   :output => 'build/js',  :patterns => [%r{^.+\.(?:coffee|coffee\.md|litcoffee)$}], :all_on_start => true
 guard 'sass',         :input => 'lib/css',  :output => 'build/css', :all_on_start => true, :line_numbers => true
 
 guard 'concat',
       :all_on_start => true,
       :type => "js",
-      :files => %w(vendor/jquery build/js/jquery-include vendor/diff/diff_match_patch build/js/core/dom build/js/core/core),
+      :files => %w(vendor/jquery build/js/jquery-include vendor/diff/diff_match_patch build/js/dom build/js/core),
       :input_dir => ".",
       :output => "build/selectorgadget_combined"
 
