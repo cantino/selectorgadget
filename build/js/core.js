@@ -22,14 +22,12 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
-*/
-
+ */
 
 (function() {
   var SelectorGadget;
 
   window.SelectorGadget = SelectorGadget = (function() {
-
     function SelectorGadget() {}
 
     SelectorGadget.prototype.border_width = 5;
@@ -225,7 +223,7 @@
     };
 
     SelectorGadget.prototype.highlightIframe = function(elem, click) {
-      var block, instructions, p, self, src, target;
+      var block, e, instructions, p, self, src, target;
       p = elem.offset();
       self = this;
       target = jQuerySG(click.target);
@@ -246,7 +244,8 @@
       src = null;
       try {
         src = elem.contents().get(0).location.href;
-      } catch (e) {
+      } catch (error) {
+        e = error;
         src = elem.attr("src");
       }
       instructions.append(jQuerySG("<a target='_top'>click here to open it</a>").attr("href", src));

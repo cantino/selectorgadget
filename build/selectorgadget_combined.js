@@ -10881,7 +10881,6 @@ return jQuery;
 } );
 
 (function() {
-
   window.jQuerySG = jQuery.noConflict(true);
 
 }).call(this);
@@ -10911,14 +10910,12 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
-*/
-
+ */
 
 (function() {
   var DomPredictionHelper;
 
   window.DomPredictionHelper = DomPredictionHelper = (function() {
-
     function DomPredictionHelper() {}
 
     DomPredictionHelper.prototype.recursiveNodes = function(e) {
@@ -10933,12 +10930,14 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.escapeCssNames = function(name) {
+      var e;
       if (name) {
         try {
           return name.replace(/\bselectorgadget_\w+\b/g, '').replace(/\\/g, '\\\\').replace(/[\#\;\&\,\.\+\*\~\'\:\"\!\^\$\[\]\(\)\=\>\|\/]/g, function(e) {
             return '\\' + e;
           }).replace(/\s+/, '');
-        } catch (e) {
+        } catch (error) {
+          e = error;
           if (window.console) {
             console.log('---');
             console.log("exception in escapeCssNames");
@@ -10964,11 +10963,11 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.siblingsWithoutTextNodes = function(e) {
-      var filtered_nodes, node, nodes, _i, _len;
+      var filtered_nodes, k, len, node, nodes;
       nodes = e.parentNode.childNodes;
       filtered_nodes = [];
-      for (_i = 0, _len = nodes.length; _i < _len; _i++) {
-        node = nodes[_i];
+      for (k = 0, len = nodes.length; k < len; k++) {
+        node = nodes[k];
         if (node.nodeName.substring(0, 1) === "#") {
           continue;
         }
@@ -10981,11 +10980,11 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.pathOf = function(elem) {
-      var e, j, path, siblings, _i, _len, _ref;
+      var e, j, k, len, path, ref, siblings;
       path = "";
-      _ref = this.recursiveNodes(elem);
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        e = _ref[_i];
+      ref = this.recursiveNodes(elem);
+      for (k = 0, len = ref.length; k < len; k++) {
+        e = ref[k];
         if (e) {
           siblings = this.siblingsWithoutTextNodes(e);
           if (e.nodeName.toLowerCase() !== "body") {
@@ -11007,16 +11006,16 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.cssDescriptor = function(node) {
-      var cssName, escaped, path, _i, _len, _ref;
+      var cssName, escaped, k, len, path, ref;
       path = node.nodeName.toLowerCase();
       escaped = node.id && this.escapeCssNames(new String(node.id));
       if (escaped && escaped.length > 0) {
         path += '#' + escaped;
       }
       if (node.className) {
-        _ref = node.className.split(" ");
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          cssName = _ref[_i];
+        ref = node.className.split(" ");
+        for (k = 0, len = ref.length; k < len; k++) {
+          cssName = ref[k];
           escaped = this.escapeCssNames(cssName);
           if (cssName && escaped.length > 0) {
             path += '.' + escaped;
@@ -11030,10 +11029,11 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.cssDiff = function(array) {
-      var collective_common, cssElem, diff, dmp, encoded_css_array, existing_tokens, part, _i, _j, _len, _len1;
+      var collective_common, cssElem, diff, dmp, e, encoded_css_array, existing_tokens, k, l, len, len1, part;
       try {
         dmp = new diff_match_patch();
-      } catch (e) {
+      } catch (error) {
+        e = error;
         throw "Please include the diff_match_patch library.";
       }
       if (typeof array === 'undefined' || array.length === 0) {
@@ -11042,12 +11042,12 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
       existing_tokens = {};
       encoded_css_array = this.encodeCssForDiff(array, existing_tokens);
       collective_common = encoded_css_array.pop();
-      for (_i = 0, _len = encoded_css_array.length; _i < _len; _i++) {
-        cssElem = encoded_css_array[_i];
+      for (k = 0, len = encoded_css_array.length; k < len; k++) {
+        cssElem = encoded_css_array[k];
         diff = dmp.diff_main(collective_common, cssElem);
         collective_common = '';
-        for (_j = 0, _len1 = diff.length; _j < _len1; _j++) {
-          part = diff[_j];
+        for (l = 0, len1 = diff.length; l < len1; l++) {
+          part = diff[l];
           if (part[0] === 0) {
             collective_common += part[1];
           }
@@ -11057,13 +11057,13 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.tokenizeCss = function(css_string) {
-      var char, skip, tokens, word, _i, _len, _ref;
+      var char, k, len, ref, skip, tokens, word;
       skip = false;
       word = '';
       tokens = [];
-      _ref = this.cleanCss(css_string);
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        char = _ref[_i];
+      ref = this.cleanCss(css_string);
+      for (k = 0, len = ref.length; k < len; k++) {
+        char = ref[k];
         if (skip) {
           skip = false;
         } else if (char === '\\') {
@@ -11087,12 +11087,12 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.tokenizeCssForDiff = function(css_string) {
-      var block, combined_tokens, token, _i, _len, _ref;
+      var block, combined_tokens, k, len, ref, token;
       combined_tokens = [];
       block = [];
-      _ref = this.tokenizeCss(css_string);
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        token = _ref[_i];
+      ref = this.tokenizeCss(css_string);
+      for (k = 0, len = ref.length; k < len; k++) {
+        token = ref[k];
         block.push(token);
         if (token === ' ' && block.length > 0) {
           combined_tokens = combined_tokens.concat(block);
@@ -11109,27 +11109,27 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.decodeCss = function(string, existing_tokens) {
-      var character, inverted, out, _i, _len, _ref;
+      var character, inverted, k, len, out, ref;
       inverted = this.invertObject(existing_tokens);
       out = '';
-      _ref = string.split('');
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        character = _ref[_i];
+      ref = string.split('');
+      for (k = 0, len = ref.length; k < len; k++) {
+        character = ref[k];
         out += inverted[character];
       }
       return this.cleanCss(out);
     };
 
     DomPredictionHelper.prototype.encodeCssForDiff = function(strings, existing_tokens) {
-      var codepoint, out, string, strings_out, token, _i, _j, _len, _len1, _ref;
+      var codepoint, k, l, len, len1, out, ref, string, strings_out, token;
       codepoint = 50;
       strings_out = [];
-      for (_i = 0, _len = strings.length; _i < _len; _i++) {
-        string = strings[_i];
+      for (k = 0, len = strings.length; k < len; k++) {
+        string = strings[k];
         out = new String();
-        _ref = this.tokenizeCssForDiff(string);
-        for (_j = 0, _len1 = _ref.length; _j < _len1; _j++) {
-          token = _ref[_j];
+        ref = this.tokenizeCssForDiff(string);
+        for (l = 0, len1 = ref.length; l < len1; l++) {
+          token = ref[l];
           if (!existing_tokens[token]) {
             existing_tokens[token] = String.fromCharCode(codepoint++);
           }
@@ -11141,12 +11141,12 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.tokenPriorities = function(tokens) {
-      var epsilon, first, i, priorities, second, token, _i, _len;
+      var epsilon, first, i, k, len, priorities, second, token;
       epsilon = 0.001;
       priorities = new Array();
       i = 0;
-      for (_i = 0, _len = tokens.length; _i < _len; _i++) {
-        token = tokens[_i];
+      for (k = 0, len = tokens.length; k < len; k++) {
+        token = tokens[k];
         first = token.substring(0, 1);
         second = token.substring(1, 2);
         if (first === ':' && second === 'n') {
@@ -11174,10 +11174,10 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.orderFromPriorities = function(priorities) {
-      var i, ordering, tmp, _i, _j, _ref, _ref1;
+      var i, k, l, ordering, ref, ref1, tmp;
       tmp = new Array();
       ordering = new Array();
-      for (i = _i = 0, _ref = priorities.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
+      for (i = k = 0, ref = priorities.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
         tmp[i] = {
           value: priorities[i],
           original: i
@@ -11186,15 +11186,14 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
       tmp.sort(function(a, b) {
         return a.value - b.value;
       });
-      for (i = _j = 0, _ref1 = priorities.length; 0 <= _ref1 ? _j < _ref1 : _j > _ref1; i = 0 <= _ref1 ? ++_j : --_j) {
+      for (i = l = 0, ref1 = priorities.length; 0 <= ref1 ? l < ref1 : l > ref1; i = 0 <= ref1 ? ++l : --l) {
         ordering[i] = tmp[i].original;
       }
       return ordering;
     };
 
     DomPredictionHelper.prototype.simplifyCss = function(css, selected, rejected) {
-      var best_so_far, first, got_shorter, i, look_back_index, ordering, part, parts, priorities, second, selector, _i, _ref,
-        _this = this;
+      var best_so_far, first, got_shorter, i, k, look_back_index, ordering, part, parts, priorities, ref, second, selector;
       parts = this.tokenizeCss(css);
       priorities = this.tokenPriorities(parts);
       ordering = this.orderFromPriorities(priorities);
@@ -11207,7 +11206,7 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
       got_shorter = true;
       while (got_shorter) {
         got_shorter = false;
-        for (i = _i = 0, _ref = parts.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
+        for (i = k = 0, ref = parts.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
           part = ordering[i];
           if (parts[part].length === 0) {
             continue;
@@ -11220,34 +11219,36 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
           if (this.wouldLeaveFreeFloatingNthChild(parts, part)) {
             continue;
           }
-          this._removeElements(part, parts, first, function(selector) {
-            if (_this.selectorGets('all', selected, selector) && _this.selectorGets('none', rejected, selector) && (selector.length < best_so_far.length || best_so_far.length === 0)) {
-              best_so_far = selector;
-              got_shorter = true;
-              return true;
-            } else {
-              return false;
-            }
-          });
+          this._removeElements(part, parts, first, (function(_this) {
+            return function(selector) {
+              if (_this.selectorGets('all', selected, selector) && _this.selectorGets('none', rejected, selector) && (selector.length < best_so_far.length || best_so_far.length === 0)) {
+                best_so_far = selector;
+                got_shorter = true;
+                return true;
+              } else {
+                return false;
+              }
+            };
+          })(this));
         }
       }
       return this.cleanCss(best_so_far);
     };
 
     DomPredictionHelper.prototype._removeElements = function(part, parts, firstChar, callback) {
-      var j, look_back_index, selector, tmp, _i, _j;
+      var j, k, l, look_back_index, ref, ref1, ref2, ref3, selector, tmp;
       if (firstChar === '+' || firstChar === '~') {
         look_back_index = this.positionOfSpaceBeforeIndexOrLineStart(part, parts);
       } else {
         look_back_index = part;
       }
       tmp = parts.slice(look_back_index, part + 1);
-      for (j = _i = look_back_index; look_back_index <= part ? _i <= part : _i >= part; j = look_back_index <= part ? ++_i : --_i) {
+      for (j = k = ref = look_back_index, ref1 = part; ref <= ref1 ? k <= ref1 : k >= ref1; j = ref <= ref1 ? ++k : --k) {
         parts[j] = '';
       }
       selector = this.cleanCss(parts.join(''));
       if (selector === '' || !callback(selector)) {
-        for (j = _j = look_back_index; look_back_index <= part ? _j <= part : _j >= part; j = look_back_index <= part ? ++_j : --_j) {
+        for (j = l = ref2 = look_back_index, ref3 = part; ref2 <= ref3 ? l <= ref3 : l >= ref3; j = ref2 <= ref3 ? ++l : --l) {
           parts[j] = tmp[j - look_back_index];
         }
       }
@@ -11298,10 +11299,10 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.getPathsFor = function(nodeset) {
-      var node, out, _i, _len;
+      var k, len, node, out;
       out = [];
-      for (_i = 0, _len = nodeset.length; _i < _len; _i++) {
-        node = nodeset[_i];
+      for (k = 0, len = nodeset.length; k < len; k++) {
+        node = nodeset[k];
         if (node && node.nodeName) {
           out.push(this.pathOf(node));
         }
@@ -11310,7 +11311,7 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.predictCss = function(s, r) {
-      var css, selected, selected_paths, simplest, union, _i, _len;
+      var css, k, len, selected, selected_paths, simplest, union;
       if (s.length === 0) {
         return '';
       }
@@ -11321,8 +11322,8 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
         return simplest;
       }
       union = '';
-      for (_i = 0, _len = s.length; _i < _len; _i++) {
-        selected = s[_i];
+      for (k = 0, len = s.length; k < len; k++) {
+        selected = s[k];
         union = this.pathOf(selected) + ", " + union;
       }
       union = this.cleanCss(union);
@@ -11330,6 +11331,7 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.selectorGets = function(type, list, the_selector) {
+      var e;
       if (list.length === 0 && type === 'all') {
         return false;
       }
@@ -11342,7 +11344,8 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
         } else {
           return !(list.is(the_selector));
         }
-      } catch (e) {
+      } catch (error) {
+        e = error;
         if (window.console) {
           console.log("Error on selector: " + the_selector);
         }
@@ -11361,7 +11364,7 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.cssToXPath = function(css_string) {
-      var css_block, out, token, tokens, _i, _len;
+      var css_block, k, len, out, token, tokens;
       tokens = this.tokenizeCss(css_string);
       if (tokens[0] && tokens[0] === ' ') {
         tokens.splice(0, 1);
@@ -11371,8 +11374,8 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
       }
       css_block = [];
       out = "";
-      for (_i = 0, _len = tokens.length; _i < _len; _i++) {
-        token = tokens[_i];
+      for (k = 0, len = tokens.length; k < len; k++) {
+        token = tokens[k];
         if (token === ' ') {
           out += this.cssToXPathBlockHelper(css_block);
           css_block = [];
@@ -11384,7 +11387,7 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     DomPredictionHelper.prototype.cssToXPathBlockHelper = function(css_block) {
-      var current, expressions, first, i, out, re, rest, _i, _j, _len, _ref;
+      var current, expressions, first, i, k, l, len, out, re, ref, rest;
       if (css_block.length === 0) {
         return '//';
       }
@@ -11398,8 +11401,8 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
       }
       expressions = [];
       re = null;
-      for (_i = 0, _len = css_block.length; _i < _len; _i++) {
-        current = css_block[_i];
+      for (k = 0, len = css_block.length; k < len; k++) {
+        current = css_block[k];
         first = current.substring(0, 1);
         rest = current.substring(1);
         if (first === ':') {
@@ -11419,7 +11422,7 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
       if (expressions.length > 0) {
         out += '[';
       }
-      for (i = _j = 0, _ref = expressions.length; 0 <= _ref ? _j < _ref : _j > _ref; i = 0 <= _ref ? ++_j : --_j) {
+      for (i = l = 0, ref = expressions.length; 0 <= ref ? l < ref : l > ref; i = 0 <= ref ? ++l : --l) {
         out += expressions[i];
         if (i < expressions.length - 1) {
           out += ' and ';
@@ -11461,14 +11464,12 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
-*/
-
+ */
 
 (function() {
   var SelectorGadget;
 
   window.SelectorGadget = SelectorGadget = (function() {
-
     function SelectorGadget() {}
 
     SelectorGadget.prototype.border_width = 5;
@@ -11664,7 +11665,7 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
     };
 
     SelectorGadget.prototype.highlightIframe = function(elem, click) {
-      var block, instructions, p, self, src, target;
+      var block, e, instructions, p, self, src, target;
       p = elem.offset();
       self = this;
       target = jQuerySG(click.target);
@@ -11685,7 +11686,8 @@ function diff_match_patch(){this.Diff_Timeout=1.0;this.Diff_EditCost=4;this.Diff
       src = null;
       try {
         src = elem.contents().get(0).location.href;
-      } catch (e) {
+      } catch (error) {
+        e = error;
         src = elem.attr("src");
       }
       instructions.append(jQuerySG("<a target='_top'>click here to open it</a>").attr("href", src));
