@@ -1,0 +1,28 @@
+{
+  "name": "SelectorGadget",
+  "image": "mcr.microsoft.com/devcontainers/ruby:1-3.1-bookworm",
+  "mounts": [
+    "source=selectorgadget-bundle,target=/usr/local/bundle,type=volume"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "jdkDistro": "tem"
+    }
+  },
+  "postCreateCommand": "sudo chown -R vscode:vscode /usr/local/bundle && bundle install",
+  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+  "containerEnv": {
+    "BUNDLE_PATH": "/usr/local/bundle"
+  },
+  "remoteUser": "vscode"
+}

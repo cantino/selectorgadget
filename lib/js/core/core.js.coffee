@@ -436,31 +436,15 @@ window.SelectorGadget = class SelectorGadget
   randBetween: (a, b) ->
     Math.floor(Math.random() * b) + a
   
-  @toggle: (options) ->
+  @toggle: ->
     if !window.selector_gadget
       window.selector_gadget = new SelectorGadget()
       window.selector_gadget.makeInterface()
       window.selector_gadget.clearEverything()
       window.selector_gadget.setMode('interactive')
-      window.selector_gadget.analytics() unless options?.analytics == false
     else if window.selector_gadget.unbound
       window.selector_gadget.rebindAndMakeInterface()
     else
       window.selector_gadget.unbindAndRemoveInterface()
 
     jQuerySG('.selector_gadget_loading').remove()
-  
-  analytics: ->
-    # http://www.vdgraaf.info/google-analytics-without-javascript.html
-    utmac = 'UA-148948-9'
-    utmhn = encodeURIComponent('www.selectorgadget.com')
-    utmn = this.randBetween(1000000000,9999999999) # random request number
-    cookie = this.randBetween(10000000,99999999) # random cookie number
-    random = this.randBetween(1000000000,2147483647) # number under 2147483647
-    today = Math.round(new Date().getTime()/1000.0)
-    referer = encodeURIComponent(window.location.href) # referer url
-    uservar='-' # enter your own user defined variable
-    utmp='sg';
-  
-    urchinUrl = 'http://www.google-analytics.com/__utm.gif?utmwv=1&utmn=' + utmn + '&utmsr=-&utmsc=-&utmul=-&utmje=0&utmfl=-&utmdt=-&utmhn=' + utmhn + '&utmr=' + referer + '&utmp=' + utmp + '&utmac=' + utmac + '&utmcc=__utma%3D' + cookie + '.' + random + '.' + today + '.' + today + '.' + today + '.2%3B%2B__utmb%3D' + cookie + '%3B%2B__utmc%3D' + cookie + '%3B%2B__utmz%3D' + cookie + '.' + today + '.2.2.utmccn%3D(direct)%7Cutmcsr%3D(direct)%7Cutmcmd%3D(none)%3B%2B__utmv%3D' + cookie + '.' + uservar + '%3B';
-    document.body.appendChild(jQuerySG('<img />').attr('src', urchinUrl).get(0))
