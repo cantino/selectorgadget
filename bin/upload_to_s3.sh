@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -e
 
 cd /tmp
 if [ -e tmp-sg ]; then
