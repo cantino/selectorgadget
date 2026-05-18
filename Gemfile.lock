@@ -57,7 +57,7 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     shellany (0.0.1)
-    thor (1.2.1)
+    thor (1.4.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     yui-compressor (0.12.0)
