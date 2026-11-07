@@ -15,7 +15,7 @@ This dev container is set up so that a malicious dependency (a gem, or anything 
 - **`selectorgadget-bundle`** (`/usr/local/bundle`): installed gems.
 - **`selectorgadget-jetbrains-config`** (`~/.config/JetBrains`): IDE backend settings. RubyMine and WebStorm each keep their own subdirectory in it.
 
-To start clean (or to fix ownership): `docker volume rm selectorgadget-bundle selectorgadget-jetbrains-config`, then rebuild. **An existing `selectorgadget-bundle` volume from before this setup has to be removed**, because nothing runs `chown` on it any more.
+To start clean (or to fix ownership): `docker volume rm selectorgadget-bundle selectorgadget-jetbrains-config`, then rebuild. An existing `selectorgadget-bundle` volume should already be owned by `vscode` (the old `sudo chown` did that). If `bundle install` gets permission errors, remove the volume.
 
 ### Tools in the image
 Ruby 3.1 (base image `mcr.microsoft.com/devcontainers/ruby`), Node 24 (the `node` binary only, for execjs), Temurin 17 JRE (for yui-compressor) and git. Node and Java are copied from the official `node` and `eclipse-temurin` images rather than installed by devcontainer features. There's no GitHub CLI, because git runs on the Mac.
