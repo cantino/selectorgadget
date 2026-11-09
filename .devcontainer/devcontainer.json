@@ -1,28 +1,48 @@
 {
   "name": "SelectorGadget",
-  "image": "mcr.microsoft.com/devcontainers/ruby:1-3.1-bookworm",
+
+  // Build from our Dockerfile (no devcontainer features; see .devcontainer/README.md)
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+
   "mounts": [
-    "source=selectorgadget-bundle,target=/usr/local/bundle,type=volume"
+    // Gems stay in a Docker volume, off the host filesystem
+    "source=selectorgadget-bundle,target=/usr/local/bundle,type=volume",
+    // Persist JetBrains IDE backend configuration (RubyMine, WebStorm)
+    "source=selectorgadget-jetbrains-config,target=/home/vscode/.config/JetBrains,type=volume",
+    // Protect .git, I only use it on the host
+    "source=${localWorkspaceFolder}/.git,target=${containerWorkspaceFolder}/.git,type=bind,readonly",
+    // Protect .devcontainer, it can have an initializeCommand
+    "source=${localWorkspaceFolder}/.devcontainer,target=${containerWorkspaceFolder}/.devcontainer,type=bind,readonly"
+    // "source=${localWorkspaceFolder}/.claude,target=${containerWorkspaceFolder}/.claude,type=bind,readonly"
   ],
-  "features": {
-    "ghcr.io/devcontainers/features/git:1": {
-      "version": "latest"
-    },
-    "ghcr.io/devcontainers/features/github-cli:1": {
-      "version": "latest"
-    },
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "lts"
-    },
-    "ghcr.io/devcontainers/features/java:1": {
-      "version": "17",
-      "jdkDistro": "tem"
+
+  "postCreateCommand": "bundle install",
+
+  "customizations": {
+    "jetbrains": {
+      "backend": "RubyMine"
     }
   },
-  "postCreateCommand": "sudo chown -R vscode:vscode /usr/local/bundle && bundle install",
-  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+
   "containerEnv": {
-    "BUNDLE_PATH": "/usr/local/bundle"
+    "BUNDLE_PATH": "/usr/local/bundle",
+    "GIT_OPTIONAL_LOCKS": "0",
+    "HTTPS_PROXY": "http://egress:8888",
+    "HTTP_PROXY": "http://egress:8888",
+    "https_proxy": "http://egress:8888",
+    "http_proxy": "http://egress:8888",
+    "NO_PROXY": "localhost,127.0.0.1",
+    "no_proxy": "localhost,127.0.0.1",
+    "NODE_USE_ENV_PROXY": "1"
   },
-  "remoteUser": "vscode"
+
+  "runArgs": ["--network=devnet", "--hostname=selectorgadget-dev",
+              "--security-opt=no-new-privileges", "--cap-drop=NET_RAW"],
+
+  "remoteUser": "vscode",
+
+  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
 }
